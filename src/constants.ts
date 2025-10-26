@@ -1,6 +1,8 @@
 export const ASSETS = {
   images: {
     logo: "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/xpoll-logo-svg.svg",
+    glassSteps:
+      "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/glass-steps.svg",
     icons: {
       instagram:
         "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/icons/instagram.svg",
