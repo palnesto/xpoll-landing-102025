@@ -18,6 +18,7 @@ export default defineConfig(({ mode }: ConfigEnv) => {
     server:
       env.VITE_MODE === "development" || env.VITE_MODE === "local"
         ? {
+            host: true,
             port: 5175,
           }
         : undefined,

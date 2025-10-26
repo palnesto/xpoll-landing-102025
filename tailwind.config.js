@@ -1,39 +1,47 @@
-/** @type {import('tailwindcss').Config} */
+// tailwind.config.js
 import tailwindcssAnimate from "tailwindcss-animate";
 import containerQueries from "@tailwindcss/container-queries";
 
+/** @type {import('tailwindcss').Config} */
 export default {
   darkMode: ["class"],
   content: ["./index.html", "./src/**/*.{ts,tsx,js,jsx}"],
   theme: {
     extend: {
-      screens: {
-        xs: "475px",
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
+        manrope: ["Manrope", "sans-serif"],
+        opensans: ["Open Sans", "sans-serif"],
+        urbanist: ["Urbanist", "sans-serif"],
+        plusjakarta: ['"Plus Jakarta Sans"', "sans-serif"],
+        inter: ["Inter", "sans-serif"],
       },
+      screens: {
+        xs: "475px", // extra small
+        sm: "640px", // small
+        md: "768px", // medium
+        lg: "1024px", // large
+        xl: "1280px", // extra large
+        "2xl": "1536px", // double extra large
+        "3xl": "1728px",
+        "4xl": "1920px",
+        "5xl": "2160px",
+        "6xl": "2560px",
+        "7xl": "3200px", // ultra-wide displays
+      },
+
       keyframes: {
         "caret-blink": {
-          "0%,70%,100%": {
-            opacity: "1",
-          },
-          "20%,50%": {
-            opacity: "0",
-          },
+          "0%,70%,100%": { opacity: "1" },
+          "20%,50%": { opacity: "0" },
         },
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
         },
       },
       animation: {
@@ -97,9 +105,7 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        "dark-sidebar": {
-          DEFAULT: "hsl(var(--dark-sidebar))",
-        },
+        "dark-sidebar": { DEFAULT: "hsl(var(--dark-sidebar))" },
       },
       backgroundImage: {
         "purple-radial":

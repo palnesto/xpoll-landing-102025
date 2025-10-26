@@ -1,0 +1,56 @@
+export const ASSETS = {
+  images: {
+    logo: "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/xpoll-logo-svg.svg",
+    icons: {
+      instagram:
+        "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/icons/instagram.svg",
+      mail: "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/icons/mail.svg",
+      twitter:
+        "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/icons/twitter.svg",
+    },
+    aiInsights: {
+      img1: "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/ai-insights/img1.svg",
+      img3: "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/ai-insights/img3.svg",
+      img4: "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/ai-insights/img4.svg",
+      img5: "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/ai-insights/img5.svg",
+      img6: "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/ai-insights/img6.svg",
+    },
+    sideLinesPattern:
+      "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/side-lines-pattern.svg",
+    squareGPattern:
+      "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/square-bg-pattern.svg",
+    economyOfTrust:
+      "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/economy-of-trust.png",
+    structuredIntelligence: {
+      executive:
+        "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/structured-intelligence/executive.png",
+      markets:
+        "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/structured-intelligence/markets.png",
+      media:
+        "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/structured-intelligence/media.png",
+      policy:
+        "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/structured-intelligence/policy.png",
+      research:
+        "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/structured-intelligence/research.png",
+    },
+  },
+  vids: {
+    waterBall:
+      "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/water-ball.mp4",
+    reward:
+      "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/reward.mp4",
+    phoneVideo:
+      "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/phone-video.mp4",
+    ai: "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/ai.mp4",
+    globeVideo:
+      "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/globe-video.mp4",
+  },
+  gifs: {
+    handPhoneGif:
+      "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/hand-phone-gif.gif",
+    llmQueryGif:
+      "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/llm-query-gif.gif",
+  },
+};
+
+export const referenceHeightInDVH = 100;

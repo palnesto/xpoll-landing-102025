@@ -1,6 +1,18 @@
+import { DecentralizeSection } from "@/components/sections/decentralize";
+import { EconomicTrustSection } from "@/components/sections/economic-trust";
+import { FeaturesSection } from "@/components/sections/features";
+import { InsightsSection } from "@/components/sections/insights";
+import { VerificationSection } from "@/components/sections/verification";
+
 const IndexPage = () => {
   return (
-    <div className="text-red-500 bg-yellow-500 animate-bounce">Index Page</div>
+    <div>
+      <DecentralizeSection />
+      <FeaturesSection />
+      <InsightsSection />
+      <VerificationSection />
+      <EconomicTrustSection />
+    </div>
   );
 };
 
