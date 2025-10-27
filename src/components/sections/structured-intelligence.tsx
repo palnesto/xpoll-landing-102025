@@ -19,63 +19,61 @@ export const StructuredIntelligence = () => {
 
   return (
     <StandardWidthLayout>
-      <section className="w-full px-6 py-14 lg:py-20">
-        <div className="flex flex-col items-stretch gap-10 lg:grid lg:grid-cols-2 lg:gap-12">
-          {/* Left copy */}
-          <div className="flex flex-col justify-center">
-            <div className="inline-flex w-fit items-center rounded-full border border-gray-200 bg-white/70 px-3 py-1 text-xs text-blue-700 shadow-sm">
-              + From Opinion to Intelligence
-            </div>
+      <section className="w-full py-14 md:py-20 xl:py-32 flex flex-col justify-between lg:flex-row gap-10 lg:gap-0">
+        {/* Left copy */}
+        <div className="flex flex-col justify-center w-full 2xl:gap-5">
+          <h2 className="md:text-lg inline-flex w-fit items-center rounded-full border border-gray-200 bg-white/70 px-3 py-1 text-xs text-blue-700 shadow-sm">
+            + From Opinion to Intelligence
+          </h2>
 
-            <h2 className="mt-4 text-xl font-semibold leading-tight text-gray-900 sm:text-3xl">
-              Every poll becomes
-              <br />
-              <span className="gradient-text text-2xl 2xl:text-4xl">
-                Structured intelligence
-              </span>
-            </h2>
+          <h2 className="mt-4 text-[24px] font-semibold text-gray-900 md:text-4xl lg:text-3xl 2xl:text-5xl">
+            Every poll becomes
+            <br />
+            <span className="gradient-text text-[27px] md:text-5xl lg:text-4xl 2xl:text-6xl">
+              Structured intelligence
+            </span>
+          </h2>
 
-            <p className="mt-6 text-sm text-gray-600">
-              Powering decision making across:
-            </p>
+          <p className="mt-6 md:text-2xl text-gray-600">
+            Powering decision making across:
+          </p>
 
-            <div className="mt-4 grid w-full max-w-xl grid-cols-2 gap-x-10 gap-y-3 text-[15px]">
-              {categories.map((c) => (
-                <button
-                  key={c}
-                  onClick={() => setActive(c)}
+          <div className="mt-4 grid w-full max-w-xl font-medium grid-cols-2 gap-x-10 gap-y-3 2xl:gap-y-7 text-lg md:text-2xl">
+            {categories.map((c) => (
+              <button
+                key={c}
+                onClick={() => setActive(c)}
+                className={[
+                  "group inline-flex w-fit items-center gap-2 text-left transition",
+                  active === c
+                    ? "text-blue-700"
+                    : "text-gray-700 hover:text-gray-900",
+                ].join(" ")}
+              >
+                <span
                   className={[
-                    "group inline-flex w-fit items-center gap-2 text-left transition",
+                    "h-1.5 w-1.5 rounded-full",
                     active === c
-                      ? "text-blue-700"
-                      : "text-gray-700 hover:text-gray-900",
+                      ? "bg-blue-600"
+                      : "bg-gray-300 group-hover:bg-gray-400",
                   ].join(" ")}
-                >
-                  <span
-                    className={[
-                      "h-1.5 w-1.5 rounded-full",
-                      active === c
-                        ? "bg-blue-600"
-                        : "bg-gray-300 group-hover:bg-gray-400",
-                    ].join(" ")}
-                  />
-                  {c} <span className="ml-1">→</span>
-                </button>
-              ))}
-            </div>
+                />
+                {c} <span className="ml-1">→</span>
+              </button>
+            ))}
           </div>
+        </div>
 
-          {/* Right image */}
-          <div className="flex items-center justify-center lg:justify-end">
-            <div className="relative w-full max-w-[560px] overflow-hidden rounded-2xl shadow-xl ring-1 ring-black/5">
-              <img
-                key={active}
-                src={IMAGES[active]}
-                alt={String(active)}
-                className="block h-[280px] w-full object-cover sm:h-[340px] md:h-[380px] transition-opacity duration-300"
-              />
-            </div>
-          </div>
+        {/* Right image */}
+        <div className="flex items-center lg:justify-end w-full">
+          <figure className="relative w-full overflow-hidden rounded-2xl shadow-xl ring-1 ring-black/5">
+            <img
+              key={active}
+              src={IMAGES[active]}
+              alt={String(active)}
+              className="block h-[300px] w-full object-cover md:h-[400px] xl:h-[550px] transition-opacity duration-300"
+            />
+          </figure>
         </div>
       </section>
     </StandardWidthLayout>

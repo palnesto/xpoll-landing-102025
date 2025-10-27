@@ -62,18 +62,17 @@ will-change: background-position;
       /> */}
 
       {/* Foreground content */}
-      <div className="relative mx-auto max-w-7xl px-4 2xl:px-0 py-14 sm:py-16 lg:py-20">
+      <div className="relative px-4 2xl:px-0 py-14 sm:py-16 lg:py-20 space-y-10 2xl:space-y-24">
         {/* Paragraph headline */}
-        <p className="mx-auto max-w-4xl text-center text-sm sm:text-base text-gray-700">
+        <p className="mx-auto max-w-7xl text-center text-sm md:text-xl 2xl:text-2xl">
           The civic intelligence marketplace for institutions, analysts, and
           Web3.5 communities
-          <br className="hidden sm:block" />
-          powered by transparent polls, AI insights, and reward‑based
-          participation.
+          <br className="hidden xl:block" /> powered by transparent polls, AI
+          insights, and reward‑based participation.
         </p>
 
         {/* Videos */}
-        <div className="mt-10 flex flex-col gap-8 lg:mt-12 lg:flex-row lg:items-start lg:justify-between">
+        <div className="flex flex-col gap-8 xl:gap-0 lg:flex-row">
           <FeatureVideo
             src={ASSETS.vids.phoneVideo}
             title="Transparent polls"
@@ -106,7 +105,7 @@ function FeatureVideo({
 }) {
   return (
     <div className="flex w-full flex-col items-center">
-      <div className="relative w-full max-w-[360px] overflow-hidden rounded-2xl shadow-xl ring-1 ring-black/5">
+      <div className="relative w-full max-w-[360px] 2xl:max-w-[480px] overflow-hidden rounded-2xl shadow-xl ring-1 ring-black/5">
         {/* Light glassy header strip (optional text overlay) */}
         {/* {posterText ? (
           <div className="pointer-events-none absolute left-0 right-0 top-0 z-10 m-3 rounded-md bg-white/10 px-3 py-2 text-[11px] font-medium leading-tight text-white backdrop-blur">
@@ -114,7 +113,7 @@ function FeatureVideo({
           </div>
         ) : null} */}
         <video
-          className="block h-[200px] w-full object-cover sm:h-[220px] md:h-[240px]"
+          className="block w-full object-cover h-[220px] md:h-[240px] 2xl:h-[270px]"
           src={src}
           autoPlay
           muted
@@ -123,7 +122,7 @@ function FeatureVideo({
           preload="metadata"
         />
       </div>
-      <div className="mt-3 text-center text-sm font-semibold text-[#10327E]">
+      <div className="mt-3 text-center text-sm md:text-xl font-semibold text-[#10327E]">
         {title}
       </div>
     </div>
