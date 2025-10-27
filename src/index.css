@@ -242,3 +242,37 @@
 
   color: transparent;
 }
+
+.text-blue-radial {
+  background: radial-gradient(
+    47.96% 47.96% at 50% 50%,
+    #1c67fe 0%,
+    #4ea9ff 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* for Firefox */
+  color: transparent;
+}
+
+.text-white-radial {
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #ffffff 40%,
+    rgba(255, 255, 255, 0.85) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* for Firefox */
+  color: transparent;
+}
+
+.big-radial {
+  width: 100%;
+  background: radial-gradient(
+    217.23% 100.08% at 50% 18.33%,
+    rgba(0, 0, 0, 0) 21.67%,
+    #1355e9 69.34%,
+    #ffffff 100%
+  );
+}
