@@ -64,7 +64,7 @@ export const StandardWidthLayout = ({
   }, []);
 
   return (
-    <div className="w-full flex flex-col items-center font-poppins">
+    <div className="relative w-full flex flex-col items-center font-poppins">
       <div
         style={{
           width: "100%",

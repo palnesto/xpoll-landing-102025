@@ -130,29 +130,6 @@
   display: none;
 }
 
-.text-radial-blue {
-  background: radial-gradient(
-    47.96% 47.96% at 50% 50%,
-    #91b4fe 0%,
-    #4e77ff 100%
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-}
-.text-radial-indigo {
-  background: radial-gradient(
-    50% 50% at 50% 50%,
-    #1355e9 40%,
-    #8a38f5 95% /* start purple later */
-  );
-  background-clip: text;
-  -webkit-background-clip: text; /* Safari/Chrome */
-  color: transparent;
-  -webkit-text-fill-color: transparent; /* Safari */
-}
-
 .glow-circle {
   position: relative;
   border-radius: 50%;
@@ -203,4 +180,42 @@
 
 .blend {
   mix-blend-mode: difference;
+}
+
+.text-radial-blue {
+  background: radial-gradient(
+    47.96% 47.96% at 50% 50%,
+    #91b4fe 0%,
+    #4e77ff 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+.text-radial-indigo {
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #1355e9 40%,
+    #8a38f5 95% /* start purple later */
+  );
+  background-clip: text;
+  -webkit-background-clip: text; /* Safari/Chrome */
+  color: transparent;
+  -webkit-text-fill-color: transparent; /* Safari */
+}
+.text-linear-blue {
+  background: linear-gradient(94.85deg, #a3b4ff 8.51%, #457fff 94.21%);
+  background-clip: text;
+  -webkit-background-clip: text; /* Safari/Chrome */
+  color: transparent;
+  -webkit-text-fill-color: transparent; /* Safari */
+}
+
+.bg-radial-darkblue {
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #110b72 0%,
+    /* darker blue */ #000000 100%
+  );
 }
