@@ -12,6 +12,9 @@ export const ASSETS = {
     featuresBg:
       "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/features-bg.png",
     icons: {
+      x: "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/icons/x-icon.svg",
+      telegram:
+        "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/icons/telegram-icon.svg",
       instagram:
         "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/icons/instagram.svg",
       mail: "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/icons/mail.svg",
@@ -43,6 +46,8 @@ export const ASSETS = {
       research:
         "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/structured-intelligence/research.png",
     },
+    tentacles:
+      "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/tentacles.png",
     futureOfIntelligence: {
       communities:
         "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/future-of-intelligence/communities.svg",

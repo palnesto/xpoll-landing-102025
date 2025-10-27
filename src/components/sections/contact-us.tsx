@@ -1,6 +1,8 @@
 import { StandardWidthLayout } from "@/App";
+import { usePartnerModal } from "@/store/partnerModal";
 
 export const ContactUs = () => {
+  const { setOpen } = usePartnerModal();
   return (
     <StandardWidthLayout>
       <div className="mx-auto w-full py-16 lg:py-24 2xl:py-32 flex flex-col gap-10 lg:flex-row items-center justify-between text-center">
@@ -35,17 +37,20 @@ export const ContactUs = () => {
 
           <div className="pt-12 flex flex-col gap-4 lg:flex-row w-fit mx-auto lg:mx-0">
             <a
-              href="#"
+              href="https://app.xpoll.io/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-full border border-[#0264FF] px-10 py-3 lg:text-sm 2xl:text-xl text-[#0264FF] transition hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-600/50"
             >
               Join the movement
             </a>
-            <a
-              href="#"
+            <button
+              type="button"
+              onClick={() => setOpen(true)}
               className="inline-flex items-center justify-center rounded-full bg-[#0264FF] px-10 py-3 lg:text-sm 2xl:text-xl text-white shadow-sm transition hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600/60"
             >
               Partner with us
-            </a>
+            </button>
           </div>
         </div>
       </div>
