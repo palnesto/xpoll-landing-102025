@@ -2,6 +2,7 @@ import { Suspense, useEffect, useState } from "react";
 import { useRoutes } from "react-router-dom";
 import routes from "~react-pages";
 import { FullScreenLoader } from "./components/full-screen-loader";
+import { ASSETS } from "./constants";
 
 export function App() {
   const appRoutes = useRoutes(routes);
@@ -13,8 +14,23 @@ export function App() {
   );
 }
 
+const Navbar = () => {
+  return (
+    <header className="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-sm h-24">
+      <div className="flex justify-center items-center py-3">
+        <img src={ASSETS.images.xpollLogo} alt="Logo" className="h-18 w-auto" />
+      </div>
+    </header>
+  );
+};
 const DefaultLayout = ({ children }: { children: React.ReactNode }) => {
-  return <MaxWidthLayout>{children}</MaxWidthLayout>;
+  return (
+    <MaxWidthLayout>
+      {" "}
+      <Navbar />
+      <main className="pt-24">{children}</main>
+    </MaxWidthLayout>
+  );
 };
 
 const MaxWidthLayout = ({ children }: { children: React.ReactNode }) => {
