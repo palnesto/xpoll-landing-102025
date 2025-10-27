@@ -38,7 +38,7 @@ jobs:
             - name: Build, tag, and push image to DigitalOcean Container Registry
               run: |
                   IMAGE_TAG=latest
-                  docker build --target client-react-xpoll-landing-102025 -t ${{ env.DIGITALOCEAN_REGISTRY }}/$DOCKER_REPOSITORY:$IMAGE_TAG -f Dockerfile.prod .
+                  docker build --target client-xpoll-landing-102025-prod -t ${{ env.DIGITALOCEAN_REGISTRY }}/$DOCKER_REPOSITORY:$IMAGE_TAG -f Dockerfile.prod .
                   docker push ${{ env.DIGITALOCEAN_REGISTRY }}/$DOCKER_REPOSITORY:$IMAGE_TAG
 
         #   - name: Configure kubectl
