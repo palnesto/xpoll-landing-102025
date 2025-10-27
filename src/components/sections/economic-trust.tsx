@@ -2,8 +2,10 @@ import { ASSETS } from "@/constants";
 import { StandardWidthLayout } from "@/App";
 import { GlowButton } from "../glow-button";
 import { cn } from "@/lib/utils";
+import { usePartnerModal } from "@/store/partnerModal";
 
 export const EconomicTrustSection = () => {
+  const { setOpen } = usePartnerModal();
   return (
     <div className="bg-black text-white flex flex-col gap-5 h-full items-center pt-40">
       <StandardWidthLayout>
@@ -61,16 +63,20 @@ export const EconomicTrustSection = () => {
                 customColor="rgba(10, 124, 255)"
                 className="rounded-full 5xl:hidden max-w-60"
                 size="lg"
+                type="button"
+                onClick={() => setOpen(true)}
               >
-                Book your call
+                Partner with us
               </GlowButton>
               <GlowButton
                 color="custom"
                 customColor="rgba(10, 124, 255)"
                 className="rounded-full hidden 5xl:block"
                 size="2xl"
+                type="button"
+                onClick={() => setOpen(true)}
               >
-                Book your call
+                Partner with us
               </GlowButton>
             </>
             <div className="flex items-center gap-12 md:gap-20">
