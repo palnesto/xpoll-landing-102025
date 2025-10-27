@@ -17,10 +17,14 @@ export function App() {
 
 const Navbar = () => {
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-sm h-24">
-      <div className="flex justify-center items-center py-3">
-        <img src={ASSETS.images.xpollLogo} alt="Logo" className="h-18 w-auto" />
-      </div>
+    <header className="fixed top-0 left-0 w-full z-50 bg-white/10 backdrop-blur-lg bg-blur-lg h-24">
+      <figure className="flex justify-center items-center py-3 h-24">
+        <img
+          src={ASSETS.images.xpollLogo}
+          alt="Logo"
+          className="h-full w-full"
+        />
+      </figure>
     </header>
   );
 };
