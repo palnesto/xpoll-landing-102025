@@ -4,8 +4,38 @@ import { usePartnerModal } from "@/store/partnerModal";
 export const DecentralizeSection = () => {
   const { setOpen } = usePartnerModal();
   return (
-    <div className="overflow-hidden flex flex-col items-center px-4">
-      <div className="flex flex-col w-full items-center gap-10">
+    <div className="overflow-hidden flex flex-col items-center px-4 relative pt-14 lg:pt-40">
+      <div className="absolute h-full w-full radial-blue-blur -top-[49%]" />
+      <div className="absolute -left-[8%] aspect-square w-[35vw] xl:w-[30vw] z-50 scale-x-125 origin-left">
+        <img
+          style={{
+            transform: "rotateZ(110deg)", // 👈 rotate by 25 degrees
+          }}
+          src={ASSETS.images.tentacles}
+          className="h-full w-full object-contain opacity-15"
+        />
+      </div>
+      <div className="absolute -right-[8%] top-[1%] md:top-[25%] aspect-square w-[40vw] xl:w-[30vw] z-50 scale-x-[-1]">
+        <img
+          style={{
+            transform: "rotateZ(70deg)", // 👈 rotate by 25 degrees
+          }}
+          src={ASSETS.images.tentacles}
+          className="h-full w-full object-contain opacity-15"
+        />
+      </div>
+      {/* <div
+        style={{
+          transform: "rotateZ(100deg)", // 👈 rotate by 25 degrees
+        }}
+        className="absolute h-[4rem] left-0 z-50"
+      >
+        <img
+          src={ASSETS.images.tentacles}
+          className="h-full w-full object-contain"
+        />
+      </div> */}
+      <div className="flex flex-col w-full items-center gap-10 relative">
         <div className="lg:hidden aspect-square h-16">
           <img className="h-full w-full" src={ASSETS.images.xpollLogo} alt="" />
         </div>

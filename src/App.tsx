@@ -21,7 +21,7 @@ export function App() {
 
 const Navbar = () => {
   return (
-    <header className="hidden lg:block fixed top-0 left-0 w-full z-50 bg-white/10 backdrop-blur-lg bg-blur-lg h-36 py-10">
+    <header className="hidden lg:block fixed top-0 left-0 w-full z-50 bg-white/10 backdrop-blur-lg bg-blur-lg h-24">
       <figure className="flex justify-center items-center py-3 h-24">
         <img
           src={ASSETS.images.xpollLogo}
@@ -42,7 +42,7 @@ const DefaultLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <MaxWidthLayout>
       <Navbar />
-      <main className="pt-14 lg:pt-36">{children}</main>
+      <main className="">{children}</main>
     </MaxWidthLayout>
   );
 };

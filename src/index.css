@@ -276,3 +276,15 @@
     #ffffff 100%
   );
 }
+
+.radial-blue-blur {
+  background: radial-gradient(
+    25% 25% at 50% 50%,
+    /* slightly larger for smoother falloff */ #82c4ff 0%,
+    /* gentle sky blue */ rgba(130, 196, 255, 0.3) 45%,
+    /* soft mid fade */ rgba(255, 255, 255, 0) 100%
+      /* smooth transparent edge */
+  );
+  backdrop-filter: blur(180px);
+  -webkit-backdrop-filter: blur(180px); /* Safari support */
+}
