@@ -1,14 +1,5 @@
-import { referenceHeightInDVH } from "@/constants";
-import { ResponsiveHeight } from "../responsive-height";
-
 export const DecentralizeSection = () => {
-  const baseHeight = referenceHeightInDVH * 1;
-  const lgHeight = referenceHeightInDVH * 1;
-  return (
-    // <ResponsiveHeight baseDVH={baseHeight} lgDVH={lgHeight} className="w-full">
-    <DecentralizeSectionContent />
-    // </ResponsiveHeight>
-  );
+  return <DecentralizeSectionContent />;
 };
 
 const DecentralizeSectionContent = () => {
