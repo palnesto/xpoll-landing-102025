@@ -208,8 +208,8 @@
   background: linear-gradient(94.85deg, #a3b4ff 8.51%, #457fff 94.21%);
   background-clip: text;
   -webkit-background-clip: text; /* Safari/Chrome */
-  color: transparent;
   -webkit-text-fill-color: transparent; /* Safari */
+  color: transparent;
 }
 
 .bg-radial-darkblue {
@@ -218,4 +218,18 @@
     #110b72 0%,
     /* darker blue */ #000000 100%
   );
+}
+
+.text-beige-gradient {
+  background: linear-gradient(
+    121.52deg,
+    #fff6e5 -22.23%,
+    /* very light beige */ rgba(225, 230, 255, 0.85) 49.03%,
+    /* pale bluish white */ rgba(210, 255, 225, 0.85) 91.79%
+      /* minty light green */
+  );
+  background-clip: text; /* Firefox */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
