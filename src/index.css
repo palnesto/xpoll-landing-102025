@@ -231,5 +231,14 @@
   background-clip: text; /* Firefox */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.gradient-text {
+  background: linear-gradient(180deg, #4762ff 0%, #6a46ee 100%),
+    linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
   color: transparent;
 }
