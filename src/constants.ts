@@ -1,10 +1,14 @@
 export const ASSETS = {
   images: {
+    xpollLogo:
+      "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/xpoll-logo-svg.svg",
     logo: "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/xpoll-logo-svg.svg",
     glassSteps:
       "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/glass-steps.svg",
     sparkle:
       "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/sparkle.svg",
+    featuresBg:
+      "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/features-bg.png",
     icons: {
       instagram:
         "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/icons/instagram.svg",
@@ -36,6 +40,17 @@ export const ASSETS = {
         "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/structured-intelligence/policy.png",
       research:
         "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/structured-intelligence/research.png",
+    },
+    futureOfIntelligence: {
+      communities:
+        "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/future-of-intelligence/communities.svg",
+      web3: "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/future-of-intelligence/web3.svg",
+      institutes:
+        "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/future-of-intelligence/individuals.svg",
+      individuals:
+        "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/future-of-intelligence/individuals.svg",
+      circleHandle:
+        "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/future-of-intelligence/circle-handle.svg",
     },
   },
   vids: {
