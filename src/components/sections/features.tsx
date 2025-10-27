@@ -62,7 +62,7 @@ will-change: background-position;
       /> */}
 
       {/* Foreground content */}
-      <div className="relative mx-auto max-w-7xl px-6 py-14 sm:py-16 lg:py-20">
+      <div className="relative mx-auto max-w-7xl px-4 2xl:px-0 py-14 sm:py-16 lg:py-20">
         {/* Paragraph headline */}
         <p className="mx-auto max-w-4xl text-center text-sm sm:text-base text-gray-700">
           The civic intelligence marketplace for institutions, analysts, and
