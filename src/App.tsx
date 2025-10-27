@@ -3,6 +3,7 @@ import { useRoutes } from "react-router-dom";
 import routes from "~react-pages";
 import { FullScreenLoader } from "./components/full-screen-loader";
 import { ASSETS } from "./constants";
+import { cn } from "./lib/utils";
 
 export function App() {
   const appRoutes = useRoutes(routes);
@@ -53,10 +54,16 @@ const MaxWidthLayout = ({ children }: { children: React.ReactNode }) => {
 
 export const StandardWidthLayout = ({
   children,
+  className,
+  noOnMobile = false,
+  transitionBreakpointProp,
 }: {
   children: React.ReactNode;
+  className?: string;
+  noOnMobile?: boolean;
+  transitionBreakpointProp?: number;
 }) => {
-  const transitionBreakpoint = 1536;
+  const transitionBreakpoint = transitionBreakpointProp ?? 1536;
   const calculateWidth = () =>
     Math.min(
       3840,
@@ -64,7 +71,11 @@ export const StandardWidthLayout = ({
         Math.min(
           400,
           window.innerWidth *
-            (window.innerWidth < transitionBreakpoint ? 0.1 : 1.5)
+            (window.innerWidth < transitionBreakpoint
+              ? noOnMobile
+                ? 0
+                : 0.1
+              : 1.5)
         )
     );
 
@@ -80,11 +91,16 @@ export const StandardWidthLayout = ({
   }, []);
 
   return (
-    <div className="relative w-full flex flex-col items-center font-poppins">
+    <div
+      className={cn(
+        "relative w-full flex flex-col items-center font-poppins",
+        className
+      )}
+    >
       <div
         style={{
           width: "100%",
-          minHeight: "100dvh",
+          // minHeight: "100dvh",
           maxWidth: `${maxWidth}px`,
         }}
       >

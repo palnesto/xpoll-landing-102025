@@ -46,7 +46,7 @@ export const ASSETS = {
         "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/future-of-intelligence/communities.svg",
       web3: "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/future-of-intelligence/web3.svg",
       institutes:
-        "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/future-of-intelligence/individuals.svg",
+        "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/future-of-intelligence/institutes.svg",
       individuals:
         "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/future-of-intelligence/individuals.svg",
       circleHandle:
@@ -63,6 +63,8 @@ export const ASSETS = {
     ai: "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/ai.mp4",
     globeVideo:
       "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/globe-video.mp4",
+    beamsBg:
+      "https://xpoll-landing-102025.nyc3.cdn.digitaloceanspaces.com/beams-bg.mp4",
   },
   gifs: {
     handPhoneGif:
