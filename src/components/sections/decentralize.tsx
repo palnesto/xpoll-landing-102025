@@ -1,6 +1,8 @@
 import { ASSETS } from "@/constants";
+import { usePartnerModal } from "@/store/partnerModal";
 
 export const DecentralizeSection = () => {
+  const { setOpen } = usePartnerModal();
   return (
     <div className="overflow-hidden flex flex-col items-center px-4">
       <div className="flex flex-col w-full items-center gap-10">
@@ -10,7 +12,7 @@ export const DecentralizeSection = () => {
 
         <div className="flex flex-col items-center text-center gap-3">
           <p className="text-black/50 font-normal text-lg sm:text-xl lg:text-2xl">
-            This is next
+            This is Next
           </p>
           <p className="font-medium text-blue-radial text-3xl sm:text-4xl lg:text-5xl lg:leading-[5rem]">
             Decentralizing Public Consensus
@@ -18,10 +20,19 @@ export const DecentralizeSection = () => {
         </div>
 
         <div className="flex flex-col gap-5 sm:flex-row">
-          <button className="bg-white text-[#0264FF] border border-[#0264FF] rounded-full px-8 py-3 sm:text-lg sm:px-10 sm:py-4">
+          <a
+            href="https://app.xpoll.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white text-[#0264FF] border border-[#0264FF] rounded-full px-8 py-3 sm:text-lg sm:px-10 sm:py-4"
+          >
             Join the movement
-          </button>
-          <button className="bg-[#0264FF] text-white rounded-full px-8 py-3">
+          </a>
+          <button
+            type="button"
+            onClick={() => setOpen(true)}
+            className="bg-[#0264FF] text-white rounded-full px-8 py-3"
+          >
             Partner with us
           </button>
         </div>

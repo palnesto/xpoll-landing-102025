@@ -50,7 +50,9 @@ export const CustomModal = ({
       >
         <AlertDialogHeader>
           <div className="flex gap-3 justify-between items-center px-2">
-            <AlertDialogTitle className="">{title}</AlertDialogTitle>
+            <AlertDialogTitle className="text-radial-indigo text-xl">
+              {title}
+            </AlertDialogTitle>
             <p>
               {needX && (
                 <div
@@ -82,7 +84,7 @@ export const CustomModal = ({
               </AlertDialogCancel>
               <AlertDialogAction
                 disabled={!!isSubmitting}
-                className={`${submitButtonClass}`}
+                className={`${submitButtonClass} hover:bg-blue-800`}
                 onClick={onSubmit}
                 {...submitButtonProps}
               >

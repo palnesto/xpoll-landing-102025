@@ -1,45 +1,8 @@
 import { StandardWidthLayout } from "@/App";
 import { usePartnerModal } from "@/store/partnerModal";
-import { useEffect } from "react";
-import { useForm } from "react-hook-form";
-import { CustomModal } from "../custom-modal";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-type PartnerForm = {
-  name: string;
-  email: string;
-  description?: string;
-};
 
 export const ContactUs = () => {
-  const { isOpen, setOpen, draft, setDraft, clearDraft } = usePartnerModal();
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors, isSubmitting },
-    reset,
-    watch,
-  } = useForm<PartnerForm>({
-    defaultValues: draft,
-    mode: "onBlur",
-  });
-
-  // persist draft while typing
-  const w = watch();
-  useEffect(() => {
-    setDraft(w);
-  }, [w.name, w.email, w.description]); // eslint-disable-line react-hooks/exhaustive-deps
-
-  const onSubmit = async (data: PartnerForm) => {
-    // simulate I/O if you want: await new Promise(r=>setTimeout(r,300));
-    console.log("[Partner Modal] submit:", data);
-    clearDraft();
-    reset({ name: "", email: "", description: "" });
-    setOpen(false);
-  };
-
+  const { setOpen } = usePartnerModal();
   return (
     <StandardWidthLayout>
       <div className="mx-auto w-full py-16 lg:py-24 2xl:py-32 flex flex-col gap-10 lg:flex-row items-center justify-between text-center">
@@ -74,7 +37,9 @@ export const ContactUs = () => {
 
           <div className="pt-12 flex flex-col gap-4 lg:flex-row w-fit mx-auto lg:mx-0">
             <a
-              href="#"
+              href="https://app.xpoll.io/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-full border border-[#0264FF] px-10 py-3 lg:text-sm 2xl:text-xl text-[#0264FF] transition hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-600/50"
             >
               Join the movement
@@ -89,86 +54,6 @@ export const ContactUs = () => {
           </div>
         </div>
       </div>
-      <CustomModal
-        isOpen={isOpen}
-        onClose={() => setOpen(false)}
-        title="Partner with XPOLL"
-        onSubmit={handleSubmit(onSubmit)}
-        submitButtonText="Submit"
-        submitButtonClass="bg-[#0264FF] rounded-full"
-        needX
-        isSubmitting={isSubmitting}
-        contentContainerClass="w-full"
-      >
-        <form
-          onSubmit={(e) => {
-            e.preventDefault(); // prevent Enter from closing without validation
-          }}
-          className="space-y-5 pt-2"
-        >
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-            <div className="flex flex-col gap-2">
-              <Label htmlFor="name">Name</Label>
-              <Input
-                id="name"
-                placeholder="Your full name"
-                {...register("name", {
-                  required: "Name is required",
-                  minLength: {
-                    value: 2,
-                    message: "Name must be at least 2 characters",
-                  },
-                })}
-              />
-              {errors.name && (
-                <p className="text-sm text-red-600">{errors.name.message}</p>
-              )}
-            </div>
-
-            <div className="flex flex-col gap-2">
-              <Label htmlFor="email">Email</Label>
-              <Input
-                id="email"
-                type="email"
-                placeholder="you@example.com"
-                {...register("email", {
-                  required: "Email is required",
-                  pattern: {
-                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                    message: "Enter a valid email address",
-                  },
-                })}
-              />
-              {errors.email && (
-                <p className="text-sm text-red-600">{errors.email.message}</p>
-              )}
-            </div>
-          </div>
-
-          <div className="flex flex-col gap-2">
-            <Label htmlFor="description">Description (optional)</Label>
-            {/* Use shadcn Textarea if available, otherwise use a plain textarea */}
-            {Textarea ? (
-              <Textarea
-                id="description"
-                rows={4}
-                placeholder="Briefly describe your goals or partnership idea"
-                {...register("description")}
-              />
-            ) : (
-              <textarea
-                id="description"
-                rows={4}
-                className="w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                placeholder="Briefly describe your goals or partnership idea"
-                {...register("description")}
-              />
-            )}
-          </div>
-
-          {/* The modal's own Submit/Cancel buttons are used; no button here */}
-        </form>
-      </CustomModal>
     </StandardWidthLayout>
   );
 };

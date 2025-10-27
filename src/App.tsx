@@ -4,13 +4,17 @@ import routes from "~react-pages";
 import { FullScreenLoader } from "./components/full-screen-loader";
 import { ASSETS } from "./constants";
 import { cn } from "./lib/utils";
+import { PartnerWithUsModal } from "./components/modal/PartnerWithUsModal";
 
 export function App() {
   const appRoutes = useRoutes(routes);
 
   return (
     <Suspense fallback={<FullScreenLoader />}>
-      <DefaultLayout>{appRoutes}</DefaultLayout>
+      <DefaultLayout>
+        {appRoutes}
+        <PartnerWithUsModal />
+      </DefaultLayout>
     </Suspense>
   );
 }
