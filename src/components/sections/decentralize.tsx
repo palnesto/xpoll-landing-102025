@@ -5,7 +5,7 @@ export const DecentralizeSection = () => {
   const { setOpen } = usePartnerModal();
   return (
     <div className="overflow-hidden flex flex-col items-center px-4 relative pt-14 lg:pt-40">
-      <div className="absolute h-full w-full radial-blue-blur -top-[49%]" />
+      <div className="absolute h-full w-full radial-blue-blur -top-[60%] lg:-top-[49%] scale-125 lg:scale-150" />
       <div className="absolute -left-[8%] aspect-square w-[35vw] xl:w-[30vw] z-50 scale-x-125 origin-left">
         <img
           style={{

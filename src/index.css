@@ -288,3 +288,17 @@
   backdrop-filter: blur(180px);
   -webkit-backdrop-filter: blur(180px); /* Safari support */
 }
+
+/* 📱 For smaller screens: make it wider, smoother */
+@media (max-width: 1024px) {
+  .radial-blue-blur {
+    background: radial-gradient(
+      45% 45% at 50% 50%,
+      /* increased radius for mobile/tablet */ #8eceff 0%,
+      rgba(140, 206, 255, 0.35) 55%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    backdrop-filter: blur(200px);
+    -webkit-backdrop-filter: blur(200px);
+  }
+}
