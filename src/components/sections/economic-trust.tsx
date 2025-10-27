@@ -2,8 +2,10 @@ import { ASSETS } from "@/constants";
 import { StandardWidthLayout } from "@/App";
 import { GlowButton } from "../glow-button";
 import { cn } from "@/lib/utils";
+import { usePartnerModal } from "@/store/partnerModal";
 
 export const EconomicTrustSection = () => {
+  const { setOpen } = usePartnerModal();
   return (
     <div className="bg-black text-white flex flex-col gap-5 h-full items-center pt-40">
       <StandardWidthLayout>
@@ -47,10 +49,11 @@ export const EconomicTrustSection = () => {
           {/* middle para */}
           <div className="max-w-72 sm:max-w-96 md:max-w-none text-center flex flex-col gap-5 mb-5">
             <p className="font-plusjakarta text-3xl md:text-5xl 2xl font-bold">
-              Stay <span className="text-nowrap">tuned for</span> XPOLL insights
+              Email us: <a href="mailto:hello@xpoll.io">hello@xpoll.io</a>
+              {/* Stay <span className="text-nowrap">tuned for</span> XPOLL insights */}
             </p>
             <p className="font-inter font-normal text-base md:text-2xl text-[#A5ABB6]">
-              We share updates on polls, analytics, and AI-driven civic trends.
+              Phone: <a href="tel:+1 860 655 0095">+1 860 655 0095</a>
             </p>
           </div>
           <div className="flex flex-col gap-24 md:gap-32 items-center">
@@ -60,40 +63,56 @@ export const EconomicTrustSection = () => {
                 customColor="rgba(10, 124, 255)"
                 className="rounded-full 5xl:hidden max-w-60"
                 size="lg"
+                type="button"
+                onClick={() => setOpen(true)}
               >
-                Book your call
+                Partner with us
               </GlowButton>
               <GlowButton
                 color="custom"
                 customColor="rgba(10, 124, 255)"
                 className="rounded-full hidden 5xl:block"
                 size="2xl"
+                type="button"
+                onClick={() => setOpen(true)}
               >
-                Book your call
+                Partner with us
               </GlowButton>
             </>
             <div className="flex items-center gap-12 md:gap-20">
               <GlowCircle
-                img={ASSETS.images.icons.twitter}
+                img={ASSETS.images.icons.x}
                 size="md"
                 className="h-16 p-[1rem] md:h-20 mdp-[1.35rem]"
+                onClick={() =>
+                  window.open("https://x.com/xpollplatform", "_blank")
+                }
               />
               <GlowCircle
                 img={ASSETS.images.icons.instagram}
                 size="md"
                 className="h-16 p-[1rem] md:h-20 mdp-[1.35rem]"
+                onClick={() =>
+                  window.open(
+                    "https://www.instagram.com/xpollplatform/",
+                    "_blank"
+                  )
+                }
               />
               <GlowCircle
-                img={ASSETS.images.icons.mail}
+                img={ASSETS.images.icons.telegram}
                 size="md"
                 className="h-16 p-[1rem] md:h-20 mdp-[1.35rem]"
+                onClick={() =>
+                  window.open("https://t.me/xpollplatform", "_blank")
+                }
               />
             </div>
           </div>
         </div>
         {/* footer */}
         <div className="flex flex-col items-center gap-20 text-center py-16 md:py-20 text-sm md:text-lg lg:text-lg w-full">
-          <div className="hidden lg:flex lg:items-center lg:justify-center gap-x-5 lg:gap-x-10 gap-y-5 text-[#A5ABB6] w-full max-w-[60rem]">
+          {/* <div className="hidden lg:flex lg:items-center lg:justify-center gap-x-5 lg:gap-x-10 gap-y-5 text-[#A5ABB6] w-full max-w-[60rem]">
             <div className="md:hover:text-white/80 md:transition md:duration-200 md:cursor-pointer">
               Product suite
             </div>
@@ -112,10 +131,9 @@ export const EconomicTrustSection = () => {
             <div className="md:hover:text-white/80 md:transition md:duration-200 md:cursor-pointer">
               Sign In
             </div>
-          </div>
+          </div> */}
           <p className="text-[#676D79] tracking-wide">
-            © 2022 – 2025 Xpoll. Built by{" "}
-            <span className="font-bold">Palnesto</span>. All rights reserved.
+            © 2025 XPoll Inc. All rights reserved.
           </p>
         </div>
       </StandardWidthLayout>
