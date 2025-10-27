@@ -81,7 +81,7 @@ export const EconomicTrustSection = () => {
             </>
             <div className="flex items-center gap-12 md:gap-20">
               <GlowCircle
-                img={ASSETS.images.icons.twitter}
+                img={ASSETS.images.icons.x}
                 size="md"
                 className="h-16 p-[1rem] md:h-20 mdp-[1.35rem]"
                 onClick={() =>
@@ -100,7 +100,7 @@ export const EconomicTrustSection = () => {
                 }
               />
               <GlowCircle
-                img={ASSETS.images.icons.mail}
+                img={ASSETS.images.icons.telegram}
                 size="md"
                 className="h-16 p-[1rem] md:h-20 mdp-[1.35rem]"
                 onClick={() =>
