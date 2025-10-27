@@ -242,3 +242,15 @@
 
   color: transparent;
 }
+
+.text-blue-radial {
+  background: radial-gradient(
+    47.96% 47.96% at 50% 50%,
+    #1c67fe 0%,
+    #4ea9ff 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* for Firefox */
+  color: transparent;
+}
