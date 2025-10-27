@@ -21,19 +21,17 @@ const data = [
     description:
       "AI-driven summaries forecasting likely outcomes, behavioral shifts, and sentiment trends.",
     children: (
-      <div className="h-full w-full overflow-hidden">
-        <video
-          src={ASSETS.vids.waterBall}
-          autoPlay
-          muted
-          loop
-          playsInline
-          controls={false}
-          disablePictureInPicture
-          controlsList="nodownload nofullscreen noremoteplayback"
-          className="pointer-events-none static left-0 top-0 translate-x-0 -translate-y-10 w-full h-auto object-cover object-center"
-        />
-      </div>
+      <video
+        src={ASSETS.vids.waterBall}
+        autoPlay
+        muted
+        loop
+        playsInline
+        controls={false}
+        disablePictureInPicture
+        controlsList="nodownload nofullscreen noremoteplayback"
+        className="pointer-events-none static left-0 top-0 translate-x-0 -translate-y-10 w-full h-auto object-cover object-center"
+      />
     ),
   },
   {
