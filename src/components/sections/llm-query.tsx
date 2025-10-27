@@ -32,6 +32,16 @@ export const LLMQuerySection = () => {
       </div>
       <div className="flex justify-center">
         <div className="w-full max-w-[96rem] translate-y-[12%] relative">
+          {/* tags */}
+          <p className="backdrop-blur-lg bg-blur-lg hidden md:block absolute bg-[#FFFFFF17] text-white px-10 py-2 rounded-full z-50 left-[-0.5%] top-[15%] text-xs lg:text-base lg:left-[4%]">
+            Political Dashboard
+          </p>
+          <p className="backdrop-blur-lg bg-blur-lg hidden md:block absolute bg-[#FFFFFF17] text-white px-10 py-2 rounded-full z-50 right-[5%] top-[27%] text-xs lg:text-base lg:right-[3%] lg:top-[25%]">
+            Protocol Dashboard
+          </p>
+          <p className="backdrop-blur-lg bg-blur-lg hidden md:block absolute bg-[#FFFFFF17] text-white px-10 py-2 rounded-full z-50 right-[15%] top-[41%] text-xs lg:text-base lg:right-[10%] lg:top-[40%]">
+            Institutional Dashboard
+          </p>
           {/* left */}
           <div className="absolute scale-x-[-1] left-0 -translate-x-[40%] top-1/2 -translate-y-1/2">
             <img
@@ -47,7 +57,7 @@ export const LLMQuerySection = () => {
             />
           </div>
           <img
-            className="h-full w-full object-contain relative"
+            className="h-full scale-125 md:scale-100 w-full object-contain relative"
             src={ASSETS.gifs.llmQueryGif}
           />
         </div>
