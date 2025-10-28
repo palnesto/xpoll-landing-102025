@@ -23,7 +23,7 @@ export const EconomicTrustSection = () => {
               </p>
 
               <p className="text-base md:text-2xl xl:text-3xl 5xl:text-4xl tracking-wide lg:tracking-normal text-white/70">
-                We make real participations into measurable intelligence
+                We make real participation into measurable intelligence
               </p>
             </div>
             {/* img */}
