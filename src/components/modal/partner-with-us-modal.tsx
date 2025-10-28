@@ -5,6 +5,9 @@ import { usePartnerModal } from "@/store/partnerModal";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { useApiMutation } from "@/hooks/useApiMutation";
+import { endpoints } from "@/api/endpoints";
+import { appToast } from "@/utils/toast";
 
 type PartnerForm = {
   name: string;
@@ -15,6 +18,14 @@ type PartnerForm = {
 export function PartnerWithUsModal() {
   const { isOpen, setOpen, draft, setDraft, clearDraft } = usePartnerModal();
 
+  const { mutate, isPending } = useApiMutation<any, any>({
+    route: endpoints.postEnquiry,
+    method: "POST",
+    onSuccess: () => {
+      appToast.success("Submission successful! We'll be in touch soon.");
+      onClose();
+    },
+  });
   const {
     register,
     handleSubmit,
@@ -34,6 +45,11 @@ export function PartnerWithUsModal() {
 
   const onSubmit = async (data: PartnerForm) => {
     console.log("[Partner Modal] submit:", data);
+    mutate({
+      email: data.email,
+      name: data.name,
+      ...(data.description ? { message: data.description } : {}),
+    });
     clearDraft();
     reset({ name: "", email: "", description: "" });
     setOpen(false);

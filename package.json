@@ -13,6 +13,7 @@
     "preview": "dotenv -e src/env/.env.local vite preview"
   },
   "dependencies": {
+    "axios": "^1.7.9",
     "@emotion/react": "^11.14.0",
     "@radix-ui/react-alert-dialog": "^1.1.15",
     "@radix-ui/react-label": "^2.1.7",
@@ -30,6 +31,8 @@
     "tailwind-merge": "^3.3.1",
     "tailwind-variants": "^3.1.1",
     "tailwindcss-animate": "^1.0.7",
+    "react-hot-toast": "^2.4.1",
+    "@tanstack/react-query": "^5.62.2",
     "zustand": "^5.0.8"
   },
   "devDependencies": {
