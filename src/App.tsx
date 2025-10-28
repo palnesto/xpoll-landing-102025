@@ -4,7 +4,7 @@ import routes from "~react-pages";
 import { FullScreenLoader } from "./components/full-screen-loader";
 import { ASSETS } from "./constants";
 import { cn } from "./lib/utils";
-import { PartnerWithUsModal } from "./components/modal/PartnerWithUsModal";
+import { PartnerWithUsModal } from "./components/modal/partner-with-us-modal";
 
 export function App() {
   const appRoutes = useRoutes(routes);
