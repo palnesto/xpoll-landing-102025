@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://xpoll.io/sitemap.xml
+
+Sitemap: https://app.xpoll.io/sitemap.xml
