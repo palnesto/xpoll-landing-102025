@@ -11,19 +11,6 @@ const apiInstance = axios.create({
 apiInstance.interceptors.response.use(
   (response) => response,
   (error) => {
-    // const status = error?.response?.status;
-    // const url = error?.config?.url || "";
-    // const message =
-    //   error?.response?.data?.message || "An unexpected error occurred";
-
-    // if (!(status === 401 && url.includes(endpoints.profile.me))) {
-    //   if (
-    //     import.meta.env.VITE_MODE !== "production" &&
-    //     import.meta.env.VITE_MODE !== "development"
-    //   ) {
-    //     appToast.error(message);
-    //   }
-    // }
     return Promise.reject(error);
   }
 );
