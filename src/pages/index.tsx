@@ -4,6 +4,7 @@ import { EconomicTrustSection } from "@/components/sections/economic-trust";
 import { FeaturesSection } from "@/components/sections/features";
 import { FutureOfIntelligence } from "@/components/sections/future-of-intelligence";
 import { InsightsSection } from "@/components/sections/insights";
+import Leaderboard from "@/components/sections/leaderboard";
 import { LLMQuerySection } from "@/components/sections/llm-query";
 import { PhoneVidSection } from "@/components/sections/phone-vid-section";
 import { StructuredIntelligence } from "@/components/sections/structured-intelligence";
@@ -13,6 +14,7 @@ const IndexPage = () => {
   return (
     <div>
       <DecentralizeSection />
+      <Leaderboard />
       <FeaturesSection />
       <ContactUs />
       <FutureOfIntelligence />
