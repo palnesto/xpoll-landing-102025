@@ -14,7 +14,7 @@ const IndexPage = () => {
   return (
     <div>
       <DecentralizeSection />
-      {/* <Leaderboard /> */}
+      <Leaderboard />
       <FeaturesSection />
       <ContactUs />
       <FutureOfIntelligence />

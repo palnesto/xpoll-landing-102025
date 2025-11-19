@@ -15,7 +15,7 @@ export default function Leaderboard() {
 
   const pageData = data?.data?.data;
   const items = pageData?.items || [];
-  const totalPages = pageData?.totalPages || 1;
+  const totalPages = Math.min(pageData?.totalPages || 1, 100);
   console.log("page dat", pageData);
   return (
     <div className="w-full flex flex-col items-center py-10 bg-[#F5F7FB] min-h-screen">
@@ -40,7 +40,7 @@ export default function Leaderboard() {
                     <th className="py-3 text-center">Level</th>
                     <th className="py-3 text-center">Location</th>
                     <th className="py-3 text-center">Rank</th>
-                    <th className="py-3 text-center">No. of polls</th>
+                    {/* <th className="py-3 text-center">No. of polls</th> */}
                   </tr>
                 </thead>
 
@@ -54,7 +54,7 @@ export default function Leaderboard() {
                         {(page - 1) * pageSize + idx + 1}
                       </td>
 
-                      <td className="p-4 flex items-center justify-center gap-2">
+                      <td className="py-4 pl-12 flex items-center gap-2">
                         <img
                           src={user.avatar?.imageUrl}
                           alt="avatar"
@@ -63,7 +63,7 @@ export default function Leaderboard() {
                         <span>{user.username}</span>
                       </td>
 
-                      <td className="py-4 px-10 text-center">
+                      <td className="py-4 px-7 text-center">
                         {user.civicScore}
                       </td>
                       <td className="py-4 px-10 text-center">{user.level}</td>
@@ -75,9 +75,9 @@ export default function Leaderboard() {
                       <td className="py-4 px-7 text-center">
                         {user.rankNumber}
                       </td>
-                      <td className="py-4 px-7 text-center">
+                      {/* <td className="py-4 px-7 text-center">
                         {user.pollsParticipated}
-                      </td>
+                      </td> */}
                     </tr>
                   ))}
                 </tbody>
