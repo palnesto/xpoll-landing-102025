@@ -20,7 +20,11 @@
     <link rel="canonical" href="https://app.xpoll.io/" />
 
     <!-- Title & Description -->
-    <title>XPOLL App — Civic Intelligence, On-Chain Rewards</title>
+    <!-- <title>XPOLL App — Civic Intelligence, On-Chain Rewards</title> -->
+    <meta
+      property="og:title"
+      content="XPOLL — Decentralizing Public Consensus"
+    />
     <meta
       name="description"
       content="Participate in polls, earn rewards, and track your impact on XPOLL."
@@ -69,6 +73,20 @@
 
     <!-- Robots -->
     <meta name="robots" content="index, follow, max-image-preview:large" />
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-D9KBR0Y9YQ"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-D9KBR0Y9YQ");
+    </script>
+    <title>XPOLL App — Civic Intelligence, On-Chain Rewards</title>
   </head>
   <body>
     <div id="root"></div>
