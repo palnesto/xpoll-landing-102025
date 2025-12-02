@@ -41,7 +41,7 @@ export const VerificationSection = () => {
           label={"User Polls"}
           className="lg:-translate-y-8"
         />
-        <StatsCard value={"176,000"} label={"Vote recorded"} />
+        <StatsCard value={"1.2M+"} label={"Data Points Analyzed"} />
       </div>
     </div>
   );

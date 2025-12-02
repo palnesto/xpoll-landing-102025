@@ -17,7 +17,7 @@ export const ContactUs = () => {
               1.2M<span className="align-top">+</span>
             </p>
             <p className="text-lg md:text-2xl 2xl:text-3xl text-[#292D33]">
-              verified votes analyzed
+              Data Points Analyzed
             </p>
           </div>
         </div>
