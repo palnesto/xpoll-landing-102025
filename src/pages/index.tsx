@@ -1,3 +1,4 @@
+import Blogs from "@/components/sections/blogs";
 import { ContactUs } from "@/components/sections/contact-us";
 import { DecentralizeSection } from "@/components/sections/decentralize";
 import { EconomicTrustSection } from "@/components/sections/economic-trust";
@@ -15,6 +16,7 @@ const IndexPage = () => {
     <div>
       <DecentralizeSection />
       <Leaderboard />
+      <Blogs />
       <FeaturesSection />
       <ContactUs />
       <FutureOfIntelligence />
