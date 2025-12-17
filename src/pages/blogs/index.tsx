@@ -10,7 +10,7 @@ export default function BlogsPage() {
   const pageSize = 20;
 
   const url = `${endpoints.public.blogs}?page=${page}&pageSize=${pageSize}`;
-  const { data, isLoading, isError, isFetching } = useApiQuery(url, {
+  const { data, isLoading, isError } = useApiQuery(url, {
     enabled: true,
     keepPreviousData: true,
   });
@@ -20,12 +20,12 @@ export default function BlogsPage() {
   console.log("entry", entries);
   const articles = useMemo(() => mapEntriesToArticles(entries), [entries]);
 
-  const totalPages = Math.max(1, Math.ceil(total / pageSize));
-
   return (
-    <section className="bg-[#F5F7FB] relative lg:space-y-7 lg:py-28">
+    <section className="bg-[#F5F7FB] relative lg:space-y-7 lg:py-28 overflow-hidden">
       <div className="flex items-center gap-3 p-4 lg:px-12 sticky backdrop-blur-xl z-10 top-0 right-0 left-0">
-        <ArrowLeft className="w-6 h-6" />
+        <a href="/">
+          <ArrowLeft className="w-6 h-6" />
+        </a>
         <h1 className="text-4xl font-manrope font-extrabold">Blogs</h1>
       </div>
 

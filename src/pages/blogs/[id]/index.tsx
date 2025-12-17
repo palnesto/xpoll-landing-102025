@@ -6,6 +6,7 @@ import { useApiQuery } from "@/hooks/useApiQuery";
 import useDeviceIdentifier from "@/hooks/useDeviceIdentifier";
 import { truncateText } from "@/utils/formatter";
 import dayjs from "dayjs";
+import { ArrowLeft } from "lucide-react";
 import { useCallback, useMemo } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
@@ -52,8 +53,8 @@ export default function SpecificBlogs() {
   );
 
   return (
-    <div className="mx-auto p-4 lg:pt-20 lg:w-full 2xl:pl-20 2xl:pt-28">
-      <div className="flex flex-col gap-10 lg:flex-row max-w-[160rem] 2xl:justify-between">
+    <div className="mx-auto p-4 lg:w-full 2xl:pl-20 lg:pt-28">
+      <div className="flex flex-col md:gap-10 lg:flex-row max-w-[160rem] 2xl:justify-between">
         {/* LEFT */}
         <div className="xl:pl-12 flex-1">
           {isLoading && <div className="text-sm text-gray-500">Loading…</div>}
@@ -63,11 +64,15 @@ export default function SpecificBlogs() {
 
           {!isLoading && !isError && blogData && (
             <>
+              <header className="flex gap-4 pb-6">
+                <a href="/" className="hidden lg:block">
+                  <ArrowLeft className="w-6" />
+                </a>
+                <h1 className="text-2xl 2xl:text-4xl font-semibold font-roboto">
+                  {blogData?.blog?.title}
+                </h1>
+              </header>
               <ImageCarousel images={blogData?.blog?.imageUrls ?? []} />
-
-              <h1 className="pt-10 lg:text-xl lg:pt-20 text-3xl 2xl:text-4xl font-semibold font-roboto">
-                {blogData?.blog?.title}
-              </h1>
 
               <div className="bg-white">
                 <RichTextPreview content={blogData?.blog?.content ?? ""} />
@@ -85,7 +90,10 @@ export default function SpecificBlogs() {
         </div>
 
         {/* RIGHT: Recent Posts (same UI as screenshot) */}
-        <div className="lg:w-1/3 mb-6 order-first lg:order-none shrink-0">
+        <div className="lg:w-1/3 mb-10 md:mb-4 lg:my-6 order-first lg:order-none shrink-0 flex lg:block items-center gap-7">
+          <a href="/" className="hidden md:block lg:hidden">
+            <ArrowLeft className="w-6" />
+          </a>
           <div className="bg-white rounded shadow p-5 lg:p-8">
             <h3 className="text-sm font-semibold mb-4">Recent Posts</h3>
 
