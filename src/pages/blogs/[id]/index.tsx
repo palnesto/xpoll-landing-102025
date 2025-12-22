@@ -6,6 +6,7 @@ import { useApiQuery } from "@/hooks/useApiQuery";
 import useDeviceIdentifier from "@/hooks/useDeviceIdentifier";
 import { truncateText } from "@/utils/formatter";
 import dayjs from "dayjs";
+import { ArrowLeft } from "lucide-react";
 import { useCallback, useMemo } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
@@ -85,8 +86,11 @@ export default function SpecificBlogs() {
         </div>
 
         {/* RIGHT: Recent Posts (same UI as screenshot) */}
-        <div className="lg:w-1/3 mb-6 order-first lg:order-none shrink-0">
-          <div className="bg-white rounded shadow p-5 lg:p-8">
+        <div className="lg:w-1/3 mb-6 order-first lg:order-none shrink-0 flex  gap-2 md:gap-10">
+          <a href="/blogs" className="pt-5">
+            <ArrowLeft className="w-10 h-6 bg-gray-100 rounded-2xl p-1" />
+          </a>
+          <div className="bg-white rounded shadow p-5 lg:p-8 md:w-full">
             <h3 className="text-sm font-semibold mb-4">Recent Posts</h3>
 
             <ul className="space-y-4 lg:block">

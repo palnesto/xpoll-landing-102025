@@ -25,7 +25,9 @@ export default function BlogsPage() {
   return (
     <section className="bg-[#F5F7FB] relative lg:space-y-7 lg:py-28">
       <div className="flex items-center gap-3 p-4 lg:px-12 sticky backdrop-blur-xl z-10 top-0 right-0 left-0">
-        <ArrowLeft className="w-6 h-6" />
+        <a href="/blogs">
+          <ArrowLeft className="w-6 h-6" />
+        </a>
         <h1 className="text-4xl font-manrope font-extrabold">Blogs</h1>
       </div>
 
