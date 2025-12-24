@@ -53,8 +53,8 @@ export default function SpecificBlogs() {
   );
 
   return (
-    <div className="mx-auto p-4 lg:pt-20 lg:w-full 2xl:pl-20 2xl:pt-28">
-      <div className="flex flex-col gap-10 lg:flex-row max-w-[160rem] 2xl:justify-between">
+    <div className="mx-auto p-4 lg:w-full 2xl:pl-20 lg:pt-28">
+      <div className="flex flex-col md:gap-10 lg:flex-row max-w-[160rem] 2xl:justify-between">
         {/* LEFT */}
         <div className="xl:pl-12 flex-1">
           {isLoading && <div className="text-sm text-gray-500">Loading…</div>}
@@ -64,11 +64,15 @@ export default function SpecificBlogs() {
 
           {!isLoading && !isError && blogData && (
             <>
+              <header className="flex gap-4 pb-6">
+                <a href="/" className="hidden lg:block">
+                  <ArrowLeft className="w-6" />
+                </a>
+                <h1 className="text-2xl 2xl:text-4xl font-semibold font-roboto">
+                  {blogData?.blog?.title}
+                </h1>
+              </header>
               <ImageCarousel images={blogData?.blog?.imageUrls ?? []} />
-
-              <h1 className="pt-10 lg:text-xl lg:pt-20 text-3xl 2xl:text-4xl font-semibold font-roboto">
-                {blogData?.blog?.title}
-              </h1>
 
               <div className="bg-white">
                 <RichTextPreview content={blogData?.blog?.content ?? ""} />
