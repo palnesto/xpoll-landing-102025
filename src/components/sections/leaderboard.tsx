@@ -5,6 +5,8 @@ import { useApiQuery } from "@/hooks/useApiQuery";
 import { Card } from "../ui/card";
 import LoadingSkeleton from "../LoadingSkeleton";
 import featuredIn from "@/assets/featured.png";
+import ibt from "@/assets/ibt.svg";
+import biz from "@/assets/biz.jpeg";
 
 const Row = React.memo(function Row({ user, index }) {
   return (
@@ -163,19 +165,38 @@ export default function Leaderboard() {
           )}
         </Card>
       </section>
-      <section className="w-full flex flex-col items-center">
+      <section className="w-full flex flex-col items-center mt-10">
         <h2 className="text-3xl font-semibold text-blue-500">Featured in</h2>
-        <a
-          href="https://www.ibtimes.com/inside-stanton-terranovas-canvas-labs-innovative-space-ideas-that-dont-fit-mold-3791873"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img
-            src={featuredIn}
-            alt="featured in"
-            className="w-40 xl:w-52 -mt-6"
-          />
-        </a>
+
+        <section className="flex flex-col md:flex-row items-center gap-4">
+          <a
+            href="https://www.ibtimes.com/inside-stanton-terranovas-canvas-labs-innovative-space-ideas-that-dont-fit-mold-3791873"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={featuredIn} alt="featured in" className="w-40 xl:w-60" />
+          </a>
+          <a
+            href="https://www.ibtimes.com/ai-doesnt-fail-because-technology-it-fails-when-humans-misunderstand-each-other-3794535"
+            target="_blank"
+            rel="noopener noreferrer"
+            className=""
+          >
+            <img
+              src={ibt}
+              alt=""
+              className="h-12 md:h-20 xl:h-40 w-60 md:w-96"
+            />
+          </a>
+          <a
+            href="https://www.flipsnack.com/menapublishinggroup/bizpreneur-middle-east-january-2026/full-view.html?p=124"
+            target="_blank"
+            rel="noopener noreferrer"
+            className=""
+          >
+            <img src={biz} alt="" className="h-20 xl:h-32 mt-7" />
+          </a>
+        </section>
       </section>
     </section>
   );
