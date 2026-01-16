@@ -7,6 +7,7 @@ import LoadingSkeleton from "../LoadingSkeleton";
 import featuredIn from "@/assets/featured.png";
 import ibt from "@/assets/ibt.svg";
 import biz from "@/assets/biz.jpeg";
+import ceo from "@/assets/ceo.png";
 
 const Row = React.memo(function Row({ user, index }) {
   return (
@@ -168,7 +169,7 @@ export default function Leaderboard() {
       <section className="w-full flex flex-col items-center mt-10">
         <h2 className="text-3xl font-semibold text-blue-500">Featured in</h2>
 
-        <section className="flex flex-col md:flex-row items-center gap-4">
+        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 place-items-center gap-7 md:gap-14 md:px-6">
           <a
             href="https://www.ibtimes.com/inside-stanton-terranovas-canvas-labs-innovative-space-ideas-that-dont-fit-mold-3791873"
             target="_blank"
@@ -195,6 +196,14 @@ export default function Leaderboard() {
             className=""
           >
             <img src={biz} alt="" className="h-20 xl:h-32 mt-7" />
+          </a>
+          <a
+            href="https://ceoweekly.com/from-law-to-systems-innovation-how-stanton-terranova-built-a-life-and-business-around-earned-independence/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className=""
+          >
+            <img src={ceo} alt="" className="h-20 xl:h-32 xl:mt-7" />
           </a>
         </section>
       </section>
