@@ -41,7 +41,7 @@ export const VerificationSection = () => {
           label={"User Polls"}
           className="lg:-translate-y-8"
         />
-        <StatsCard value={"1.2M+"} label={"Data Points Analyzed"} />
+        <StatsCard value={"5.2M+"} label={"Data Points Analyzed"} />
       </div>
     </div>
   );
@@ -60,7 +60,7 @@ export const StatsCard = ({
     <div
       className={cn(
         "bg-white rounded-lg text-[#1355E9] text-center px-16 w-full max-w-80 py-8 flex flex-col items-center gap-2 shadow-[0_2px_8px_rgba(0,0,0,0.04)]",
-        className
+        className,
       )}
     >
       <p className="text-4xl 4xl:text-5xl font-semibold tracking-wide">{`${value}`}</p>

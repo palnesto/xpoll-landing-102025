@@ -14,7 +14,7 @@ export const ContactUs = () => {
 
           <div className="mt-10 2xl:mt-5">
             <p className="text-[84px] font-medium font-poppins text-[#185CFF] select-none md:text-[112px] 2xl:text-[140px]">
-              1.2M<span className="align-top">+</span>
+              5.2M<span className="align-top">+</span>
             </p>
             <p className="text-lg md:text-2xl 2xl:text-3xl text-[#292D33]">
               Data Points Analyzed
