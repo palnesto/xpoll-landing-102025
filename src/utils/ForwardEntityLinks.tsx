@@ -181,7 +181,7 @@ export function ForwardEntityLinks({
                 </div>
 
                 {it.asset && (
-                  <figure className="px-5 h-[130px] md:h-[150px]">
+                  <figure className="px-5 h-[130px] md:h-[150px] w-full">
                     <img
                       src={it.asset}
                       alt=""
@@ -211,22 +211,25 @@ export function ForwardEntityLinks({
               key={`${it.toType}:${it.toId}`}
               type="button"
               onClick={() => goTo(it.toType, it.toId)}
-              className={cn(cardBase, "bg-gray-200")}
+              className={cn(
+                cardBase,
+                "bg-gray-200 flex flex-col justify-between p-5",
+              )}
             >
-              <div className="px-5 pt-2 h-[140px]">
-                <h3 className="text-base font-semibold text-gray-900">
+              <div className="h-[140px]">
+                <h3 className="text-sm font-semibold text-gray-900">
                   {truncate(it.title, 300)}
                 </h3>
 
                 {it.description ? (
                   <p className="text-xs text-gray-600 line-clamp-3">
-                    {truncate(it.description, 170)}
+                    <RichTextPreview content={truncate(it.description, 140)} />
                   </p>
                 ) : null}
               </div>
 
               {it.asset ? (
-                <figure className="px-5 pb-5 h-[240px] md:h-[280px]">
+                <figure className="h-[200px] md:h-[240px] w-full">
                   <img
                     src={it.asset}
                     alt=""
