@@ -5,6 +5,7 @@ import { RichTextPreview } from "@/components/editor-preview";
 import { useApiQuery } from "@/hooks/useApiQuery";
 import useDeviceIdentifier from "@/hooks/useDeviceIdentifier";
 import { truncateText } from "@/utils/formatter";
+import { ForwardEntityLinks } from "@/utils/ForwardEntityLinks";
 import dayjs from "dayjs";
 import { ArrowLeft } from "lucide-react";
 import { useCallback, useMemo } from "react";
@@ -49,14 +50,14 @@ export default function SpecificBlogs() {
       if (blogId) return navigate(`/blogs/${blogId}`);
       navigate("/blogs");
     },
-    [navigate]
+    [navigate],
   );
 
   return (
     <div className="mx-auto p-4 lg:w-full 2xl:pl-20 lg:pt-28">
       <div className="flex flex-col md:gap-10 lg:flex-row max-w-[160rem] 2xl:justify-between">
         {/* LEFT */}
-        <div className="xl:pl-12 flex-1">
+        <div className="xl:pl-12 flex-1 overflow-hidden">
           {isLoading && <div className="text-sm text-gray-500">Loading…</div>}
           {isError && (
             <div className="text-sm text-red-600">Failed to load blog.</div>
@@ -73,6 +74,11 @@ export default function SpecificBlogs() {
                 </h1>
               </header>
               <ImageCarousel images={blogData?.blog?.imageUrls ?? []} />
+
+              <h1 className="pt-10 lg:text-xl lg:pt-20 text-3xl 2xl:text-4xl font-semibold font-roboto">
+                {blogData?.blog?.title}
+              </h1>
+              <ForwardEntityLinks type="blog" id={blogData?.blog?._id ?? ""} />
 
               <div className="bg-white">
                 <RichTextPreview content={blogData?.blog?.content ?? ""} />
