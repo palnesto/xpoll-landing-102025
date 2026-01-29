@@ -57,7 +57,7 @@ export default function SpecificBlogs() {
     <div className="mx-auto p-4 lg:pt-20 lg:w-full 2xl:pl-20 2xl:pt-28">
       <div className="flex flex-col gap-10 lg:flex-row max-w-[160rem] 2xl:justify-between">
         {/* LEFT */}
-        <div className="xl:pl-12 flex-1">
+        <div className="xl:pl-12 flex-1 overflow-hidden">
           {isLoading && <div className="text-sm text-gray-500">Loading…</div>}
           {isError && (
             <div className="text-sm text-red-600">Failed to load blog.</div>

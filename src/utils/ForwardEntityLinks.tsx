@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { endpoints } from "@/api/endpoints";
 import { useApiQuery } from "@/hooks/useApiQuery";
 import { cn } from "@/lib/utils";
+import { RichTextPreview } from "@/components/editor-preview";
 
 type EntityType = "blog" | "poll" | "trial" | "campaign";
 
@@ -83,8 +84,6 @@ export function ForwardEntityLinks({
   className?: string;
   routeForType?: (type: EntityType, id: string) => string;
 }) {
-  const navigate = useNavigate();
-
   const url = useMemo(
     () => endpoints.entityLink.listForward(type, id),
     [type, id],
@@ -123,6 +122,18 @@ export function ForwardEntityLinks({
       });
   }, [entries]);
 
+  const baseDomainFor = (t: EntityType) =>
+    t === "blog" ? "https://xpoll.io" : "https://app.xpoll.io";
+
+  const goTo = (toType: EntityType, toId: string) => {
+    const path = routeForType
+      ? routeForType(toType, toId)
+      : defaultRouteFor(toType, toId);
+
+    const url = `${baseDomainFor(toType)}${path}`;
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
+
   if (isLoading) {
     return (
       <div className={cn("mt-6 space-y-3", className)}>
@@ -134,97 +145,94 @@ export function ForwardEntityLinks({
 
   if (isError || items.length === 0) return null;
 
+  const cardBase =
+    "shrink-0 snap-start w-[320px] md:w-[380px] h-[420px] md:h-[460px] " +
+    "text-left bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition overflow-hidden bg-gray-200";
+
   return (
     <div className={cn("mt-6", className)}>
       <div className="font-semibold text-gray-900 py-3">Linked List</div>
 
-      <div className="space-y-5 max-w-xl">
+      <div className="w-full flex flex-nowrap items-stretch  gap-5 overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-2">
         {items.map((it) => {
-          const go = () => {
-            const path = routeForType
-              ? routeForType(it.toType, it.toId)
-              : defaultRouteFor(it.toType, it.toId);
-            navigate(path);
-          };
-
           if (it.toType === "poll") {
             return (
               <button
                 key={`${it.toType}:${it.toId}`}
                 type="button"
-                onClick={go}
-                className="w-full text-left bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition overflow-hidden"
+                onClick={() => goTo(it.toType, it.toId)}
+                className={cn(cardBase)}
               >
-                <div className="p-5">
-                  <h3 className="font-semibold text-gray-900">{it.title}</h3>
+                <div className="p-5 h-[160px]">
+                  <h3 className="text-sm font-semibold text-gray-900 line-clamp-2">
+                    {it.title}
+                  </h3>
 
                   {it.description ? (
-                    <p className="mt-2 text-xs text-gray-600">
-                      {truncate(it.description, 170)}
-                    </p>
+                    <div className="text-xs text-gray-600 line-clamp-3">
+                      <RichTextPreview
+                        content={truncate(it.description, 140)}
+                      />
+                    </div>
                   ) : null}
                 </div>
 
-                <div className="px-5 pb-5">
-                  {it.asset ? (
+                {it.asset && (
+                  <figure className="px-5 h-[130px] md:h-[150px]">
                     <img
                       src={it.asset}
                       alt=""
-                      className="w-full h-36 md:h-44 object-cover rounded-xl"
+                      className="w-full h-full object-cover rounded-xl"
                     />
-                  ) : (
-                    <div className="w-full h-44 md:h-56 rounded-xl bg-gray-100" />
-                  )}
-                </div>
+                  </figure>
+                )}
 
-                {/* options preview */}
-                {it.options?.length ? (
-                  <div className="px-5 pb-5 space-y-3">
+                {it.options?.length && (
+                  <div className="px-5 pt-2 h-[140px] md:h-[160px] overflow-y-auto space-y-2">
                     {it.options.slice(0, 6).map((op) => (
                       <div
                         key={op._id}
-                        className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-800"
+                        className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2 text-xs text-gray-800"
                       >
                         {op.text}
                       </div>
                     ))}
                   </div>
-                ) : null}
+                )}
               </button>
             );
           }
 
-          // ✅ NON-POLL UI (resource asset + title + desc)
           return (
             <button
               key={`${it.toType}:${it.toId}`}
               type="button"
-              onClick={go}
-              className="w-full text-left bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition overflow-hidden"
+              onClick={() => goTo(it.toType, it.toId)}
+              className={cn(cardBase, "bg-gray-200")}
             >
-              <div className="flex gap-4 p-5">
+              <div className="px-3 h-[140px]">
+                <h3 className="text-base font-semibold text-gray-900">
+                  {truncate(it.title, 300)}
+                </h3>
+
+                {it.description ? (
+                  <p className="text-sm text-gray-600 line-clamp-3">
+                    {truncate(it.description, 170)}
+                  </p>
+                ) : null}
+              </div>
+
+              <figure className="px-3 pb-5 h-[240px] md:h-[280px]">
                 {it.asset ? (
                   <img
                     src={it.asset}
                     alt=""
-                    className="w-20 h-20 rounded-xl object-cover shrink-0"
+                    className="w-full h-full object-cover rounded-xl"
                   />
                 ) : (
-                  <div className="w-20 h-20 rounded-xl bg-gray-100 shrink-0" />
+                  <div className="w-full h-full rounded-xl" />
                 )}
-
-                <div className="min-w-0">
-                  <h3 className="text-base font-semibold text-gray-900 truncate">
-                    {it.title}
-                  </h3>
-
-                  {it.description ? (
-                    <p className="mt-2 text-sm text-gray-600">
-                      {truncate(it.description, 140)}
-                    </p>
-                  ) : null}
-                </div>
-              </div>
+              </figure>
             </button>
           );
         })}
