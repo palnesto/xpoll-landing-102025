@@ -1,5 +1,4 @@
 import { useMemo } from "react";
-import { useNavigate } from "react-router-dom";
 import { endpoints } from "@/api/endpoints";
 import { useApiQuery } from "@/hooks/useApiQuery";
 import { cn } from "@/lib/utils";
@@ -42,11 +41,14 @@ function defaultRouteFor(type: EntityType, id: string) {
   const map: Record<EntityType, (x: string) => string> = {
     blog: (x) => `/blogs/${x}`,
     poll: (x) => `/feed/polls/${x}`,
-    trial: (x) => `/trials/${x}`,
+    trial: (x) => `/trial/${x}`, // ✅ singular
     campaign: (x) => `/campaigns/all-campaigns/${x}`,
   };
   return map[type](id);
 }
+
+const baseDomainFor = (t: EntityType) =>
+  t === "blog" ? "https://xpoll.io" : "https://app.xpoll.io";
 
 function getYoutubeThumb(id: string) {
   return `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
@@ -122,15 +124,16 @@ export function ForwardEntityLinks({
       });
   }, [entries]);
 
-  const baseDomainFor = (t: EntityType) =>
-    t === "blog" ? "https://xpoll.io" : "https://app.xpoll.io";
-
   const goTo = (toType: EntityType, toId: string) => {
-    const path = routeForType
-      ? routeForType(toType, toId)
-      : defaultRouteFor(toType, toId);
+    const url =
+      toType === "blog"
+        ? `https://xpoll.io/blogs/${toId}`
+        : toType === "campaign"
+          ? `https://app.xpoll.io/campaigns/all-campaigns/${toId}`
+          : toType === "poll"
+            ? `https://app.xpoll.io/feed/polls/${toId}`
+            : `https://app.xpoll.io/trial/${toId}`;
 
-    const url = `${baseDomainFor(toType)}${path}`;
     window.open(url, "_blank", "noopener,noreferrer");
   };
 
@@ -147,13 +150,13 @@ export function ForwardEntityLinks({
 
   const cardBase =
     "shrink-0 snap-start w-[320px] md:w-[380px] h-[420px] md:h-[460px] " +
-    "text-left bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition overflow-hidden bg-gray-200";
+    "text-left flex flex-col items-start bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition overflow-hidden bg-gray-200";
 
   return (
     <div className={cn("mt-6", className)}>
       <div className="font-semibold text-gray-900 py-3">Linked List</div>
 
-      <div className="w-full flex flex-nowrap items-stretch  gap-5 overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-2">
+      <div className="w-full flex flex-nowrap items-stretch justify-between gap-5 overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-2">
         {items.map((it) => {
           if (it.toType === "poll") {
             return (
@@ -163,7 +166,7 @@ export function ForwardEntityLinks({
                 onClick={() => goTo(it.toType, it.toId)}
                 className={cn(cardBase)}
               >
-                <div className="p-5 h-[160px]">
+                <div className="px-5 pt-5 h-[160px]">
                   <h3 className="text-sm font-semibold text-gray-900 line-clamp-2">
                     {it.title}
                   </h3>
@@ -188,7 +191,7 @@ export function ForwardEntityLinks({
                 )}
 
                 {it.options?.length && (
-                  <div className="px-5 pt-2 h-[140px] md:h-[160px] overflow-y-auto space-y-2">
+                  <div className="px-5 pt-2 h-[140px] md:h-[160px] overflow-y-auto space-y-2 w-full">
                     {it.options.slice(0, 6).map((op) => (
                       <div
                         key={op._id}
@@ -210,29 +213,29 @@ export function ForwardEntityLinks({
               onClick={() => goTo(it.toType, it.toId)}
               className={cn(cardBase, "bg-gray-200")}
             >
-              <div className="px-3 h-[140px]">
+              <div className="px-5 pt-2 h-[140px]">
                 <h3 className="text-base font-semibold text-gray-900">
                   {truncate(it.title, 300)}
                 </h3>
 
                 {it.description ? (
-                  <p className="text-sm text-gray-600 line-clamp-3">
+                  <p className="text-xs text-gray-600 line-clamp-3">
                     {truncate(it.description, 170)}
                   </p>
                 ) : null}
               </div>
 
-              <figure className="px-3 pb-5 h-[240px] md:h-[280px]">
-                {it.asset ? (
+              {it.asset ? (
+                <figure className="px-5 pb-5 h-[240px] md:h-[280px]">
                   <img
                     src={it.asset}
                     alt=""
                     className="w-full h-full object-cover rounded-xl"
                   />
-                ) : (
-                  <div className="w-full h-full rounded-xl" />
-                )}
-              </figure>
+                </figure>
+              ) : (
+                <></>
+              )}
             </button>
           );
         })}
