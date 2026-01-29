@@ -140,8 +140,9 @@ export function ForwardEntityLinks({
 
   return (
     <div className={cn("mt-6", className)}>
-      <h1 className="font-semibold text-gray-900 py-3">Just Reading ?</h1>
-      <h2 className="font-semibold text-gray-900 py-3">Vote Now , Poll Now</h2>
+      <h1 className="font-semibold text-gray-900 py-3">
+        Just Reading? Vote on XPOLL and Earn now.
+      </h1>
       <div className="w-full flex flex-nowrap items-stretch gap-5 overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-2">
         {items.map((it) => {
           if (it.toType === "poll") {
