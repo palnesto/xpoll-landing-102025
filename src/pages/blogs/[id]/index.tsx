@@ -5,6 +5,7 @@ import { RichTextPreview } from "@/components/editor-preview";
 import { useApiQuery } from "@/hooks/useApiQuery";
 import useDeviceIdentifier from "@/hooks/useDeviceIdentifier";
 import { truncateText } from "@/utils/formatter";
+import { ForwardEntityLinks } from "@/utils/ForwardEntityLinks";
 import dayjs from "dayjs";
 import { ArrowLeft } from "lucide-react";
 import { useCallback, useMemo } from "react";
@@ -49,7 +50,7 @@ export default function SpecificBlogs() {
       if (blogId) return navigate(`/blogs/${blogId}`);
       navigate("/blogs");
     },
-    [navigate]
+    [navigate],
   );
 
   return (
@@ -69,6 +70,7 @@ export default function SpecificBlogs() {
               <h1 className="pt-10 lg:text-xl lg:pt-20 text-3xl 2xl:text-4xl font-semibold font-roboto">
                 {blogData?.blog?.title}
               </h1>
+              <ForwardEntityLinks type="blog" id={blogData?.blog?._id ?? ""} />
 
               <div className="bg-white">
                 <RichTextPreview content={blogData?.blog?.content ?? ""} />
