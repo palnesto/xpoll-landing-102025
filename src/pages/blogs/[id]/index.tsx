@@ -67,7 +67,7 @@ export default function SpecificBlogs() {
             <>
               <header className="flex gap-4 pb-6">
                 <a href="/" className="hidden lg:block">
-                  <ArrowLeft className="w-6" />
+                  <ArrowLeft className="w-10 h-6 bg-gray-100 rounded-2xl p-1" />
                 </a>
                 <h1 className="text-2xl 2xl:text-4xl font-semibold font-roboto">
                   {blogData?.blog?.title}
@@ -78,17 +78,17 @@ export default function SpecificBlogs() {
               <h1 className="pt-10 lg:text-xl lg:pt-20 text-3xl 2xl:text-4xl font-semibold font-roboto">
                 {blogData?.blog?.title}
               </h1>
-              <ForwardEntityLinks type="blog" id={blogData?.blog?._id ?? ""} />
 
               <div className="bg-white">
                 <RichTextPreview content={blogData?.blog?.content ?? ""} />
               </div>
+              <ForwardEntityLinks type="blog" id={blogData?.blog?._id ?? ""} />
               <PublicPoll
                 pollStatement={blogData?.blog?.pollStatement ?? ""}
                 blogId={blogData?.blog?._id ?? ""}
                 isResponsed={!!blogData?.isResponded}
                 selectedResponse={blogData?.selectedResponse ?? null}
-                responses={blogData?.responses?.distribution ?? []} // ✅ FIX
+                responses={blogData?.responses?.distribution ?? []}
                 ip={deviceIdentifier}
               />
             </>
@@ -97,7 +97,7 @@ export default function SpecificBlogs() {
 
         {/* RIGHT: Recent Posts (same UI as screenshot) */}
         <div className="lg:w-1/3 mb-6 order-first lg:order-none shrink-0 flex  gap-2 md:gap-10">
-          <a href="/blogs" className="pt-5">
+          <a href="/blogs" className="pt-5 lg:hidden">
             <ArrowLeft className="w-10 h-6 bg-gray-100 rounded-2xl p-1" />
           </a>
           <div className="bg-white rounded shadow p-5 lg:p-8 md:w-full">
