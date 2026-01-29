@@ -37,19 +37,6 @@ type ForwardEntry = {
   };
 };
 
-function defaultRouteFor(type: EntityType, id: string) {
-  const map: Record<EntityType, (x: string) => string> = {
-    blog: (x) => `/blogs/${x}`,
-    poll: (x) => `/feed/polls/${x}`,
-    trial: (x) => `/trial/${x}`, // ✅ singular
-    campaign: (x) => `/campaigns/all-campaigns/${x}`,
-  };
-  return map[type](id);
-}
-
-const baseDomainFor = (t: EntityType) =>
-  t === "blog" ? "https://xpoll.io" : "https://app.xpoll.io";
-
 function getYoutubeThumb(id: string) {
   return `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
 }
@@ -79,7 +66,6 @@ export function ForwardEntityLinks({
   type,
   id,
   className,
-  routeForType,
 }: {
   type: EntityType;
   id: string;
@@ -156,7 +142,7 @@ export function ForwardEntityLinks({
     <div className={cn("mt-6", className)}>
       <div className="font-semibold text-gray-900 py-3">Linked List</div>
 
-      <div className="w-full flex flex-nowrap items-stretch justify-between gap-5 overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-2">
+      <div className="w-full flex flex-nowrap items-stretch gap-5 overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-2">
         {items.map((it) => {
           if (it.toType === "poll") {
             return (
