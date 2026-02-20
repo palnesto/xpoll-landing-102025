@@ -1,5 +1,6 @@
+import { ASSETS } from "@/constants";
 import { Icon } from "@iconify/react";
-
+ 
 const XPOLL_LOGO =
   "https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/uploads/994e20fc-d185-444f-8502-31239fa1f92a/1771284331687-4fe5d0e4/xpoll_logo_-fin.png";
 
@@ -181,10 +182,9 @@ export default function SalesFunnelSoulBound() {
             You need your driver&apos;s license to vote.
             <br className="hidden md:block" />
             Your passport to travel.
-            <br className="hidden md:block" />
+            <br />
             <span className="text-[#0F9BA3]">
-              And your Soulbound Token
-              <br className="hidden lg:block" /> to prove who you are.
+            Soulbound Tokens are the future of Digital Identity 
             </span>
           </h1>
 
@@ -214,12 +214,12 @@ export default function SalesFunnelSoulBound() {
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="https://app.xpoll.io"
+              href="https://app.xpoll.io/marketplace"
               target="_blank"
               id="hero-cta-primary"
               className="px-8 py-4 bg-[#DC143C] hover:bg-[#B01030] text-white rounded-xl font-[Poppins] font-semibold transition-all flex items-center gap-2 shadow-lg text-base tracking-wide [box-shadow:0_10px_15px_-3px_rgba(220,20,60,0.15)]"
             >
-              Get Your Soulbound Token — $7/mo
+             Get Started today
               <Icon icon="lucide:arrow-right" className="text-lg" />
             </a>
             <a
@@ -314,12 +314,12 @@ export default function SalesFunnelSoulBound() {
               <br className="hidden md:block" /> Soulbound Experience
             </h2>
             <p className="text-gray-500 text-base md:text-lg font-[Manrope] max-w-xl mx-auto">
-              Activate and train your digital identity in five simple steps.
+            Activate and train your digital identity in three simple steps.
             </p>
           </div>
 
           {/* 5-Step Flow */}
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-4 relative">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-7 relative">
             {/* Connecting line (desktop) */}
             <div className="hidden md:block absolute top-[24px] left-[10%] right-[10%] h-[2px] bg-gradient-to-r from-[#0F9BA3]/20 via-[#0F9BA3]/10 to-[#0F9BA3]/20 z-0" />
 
@@ -347,7 +347,7 @@ export default function SalesFunnelSoulBound() {
                 </div>
               </div>
               <h3 className="font-[Poppins] font-semibold text-base mb-2 text-[#0A1628]">
-                Earn Your Token
+                Pay for your Subscription
               </h3>
               <p className="text-sm text-gray-400 leading-relaxed font-[Manrope] px-2">
                 Receive your identity credential and unique AI avatar upon
@@ -363,61 +363,30 @@ export default function SalesFunnelSoulBound() {
                 </div>
               </div>
               <h3 className="font-[Poppins] font-semibold text-base mb-2 text-[#0A1628]">
-                Start Your Journey
+                Start Training
               </h3>
               <p className="text-sm text-gray-400 leading-relaxed font-[Manrope] px-2">
                 Engage with the ecosystem and begin building your verifiable
                 digital footprint.
               </p>
             </div>
-
-            {/* Step 4 */}
-            <div className="relative z-10 text-center group">
-              <div className="mb-5 flex justify-center">
-                <div className="w-12 h-12 rounded-full bg-[#0F9BA3] text-white flex items-center justify-center font-[Poppins] font-bold text-lg shadow-md group-hover:scale-110 transition-transform [box-shadow:0_4px_6px_-1px_rgba(15,155,163,0.2)]">
-                  4
-                </div>
-              </div>
-              <h3 className="font-[Poppins] font-semibold text-base mb-2 text-[#0A1628]">
-                On-Chain Anchoring
-              </h3>
-              <p className="text-sm text-gray-400 leading-relaxed font-[Manrope] px-2">
-                Pay $7 USD to anchor your token permanently on the blockchain.
-              </p>
-            </div>
-
-            {/* Step 5 */}
-            <div className="relative z-10 text-center group">
-              <div className="mb-5 flex justify-center">
-                <div className="w-12 h-12 rounded-full bg-[#0F9BA3] text-white flex items-center justify-center font-[Poppins] font-bold text-lg shadow-md group-hover:scale-110 transition-transform [box-shadow:0_4px_6px_-1px_rgba(15,155,163,0.2)]">
-                  5
-                </div>
-              </div>
-              <h3 className="font-[Poppins] font-semibold text-base mb-2 text-[#0A1628]">
-                Train Your Identity
-              </h3>
-              <p className="text-sm text-gray-400 leading-relaxed font-[Manrope] px-2">
-                Strengthen your on-chain record and train your personalized
-                secure AI.
-              </p>
-            </div>
           </div>
 
           {/* Trust Indicators */}
           <div className="mt-16 pt-10 border-t border-gray-100 flex flex-wrap items-center justify-center gap-8 md:gap-12">
-            <div className="flex items-center gap-2.5 text-xs font-medium text-gray-400 uppercase tracking-wider font-[Manrope]">
+            <div className="flex items-center gap-2.5 text-sm font-bold text-gray-600 uppercase tracking-wider font-[Manrope]">
               <div className="w-8 h-8 rounded-lg bg-[#0F9BA3]/5 flex items-center justify-center">
                 <Icon icon="lucide:lock" className="text-[#0F9BA3] text-sm" />
               </div>
               Secure issuance
             </div>
-            <div className="flex items-center gap-2.5 text-xs font-medium text-gray-400 uppercase tracking-wider font-[Manrope]">
+            <div className="flex items-center gap-2.5 text-sm font-bold text-gray-600 uppercase tracking-wider font-[Manrope]">
               <div className="w-8 h-8 rounded-lg bg-[#0F9BA3]/5 flex items-center justify-center">
                 <Icon icon="lucide:check-circle" className="text-[#0F9BA3] text-sm" />
               </div>
               Verified tokens
             </div>
-            <div className="flex items-center gap-2.5 text-xs font-medium text-gray-400 uppercase tracking-wider font-[Manrope]">
+            <div className="flex items-center gap-2.5 text-sm font-bold text-gray-600 uppercase tracking-wider font-[Manrope]">
               <div className="w-8 h-8 rounded-lg bg-[#0F9BA3]/5 flex items-center justify-center">
                 <Icon icon="lucide:database" className="text-[#0F9BA3] text-sm" />
               </div>
@@ -524,7 +493,7 @@ export default function SalesFunnelSoulBound() {
                   Direct Support
                 </p>
                 <p className="font-[Poppins] font-semibold text-white text-base">
-                  support@xpoll.io
+                  hello@xpoll.io
                 </p>
               </div>
             </div>
@@ -545,19 +514,20 @@ export default function SalesFunnelSoulBound() {
 
           {/* Final CTA */}
           <a
-            href="#"
+            href="https://app.xpoll.io/marketplace"
+            target="_blank"
             id="final-cta-btn"
             className="inline-flex items-center justify-center w-full md:w-auto px-12 py-4 bg-[#DC143C] hover:bg-[#B01030] text-white font-[Poppins] font-semibold rounded-xl transition-all shadow-lg text-base tracking-wide [box-shadow:0_10px_15px_-3px_rgba(220,20,60,0.2)]"
           >
-            Get Your Soulbound Token — $7/month
+           Get Started today
             <Icon icon="lucide:arrow-right" className="ml-2 text-lg" />
           </a>
 
           {/* Payment Icons */}
           <div className="mt-14 flex items-center justify-center gap-8 opacity-20">
-            <Icon icon="logos:visa" height={20} />
-            <Icon icon="logos:mastercard" height={20} />
-            <Icon icon="logos:stripe" height={20} />
+            {/* <Icon icon="logos:visa" height={20} />
+            <Icon icon="logos:mastercard" height={20} /> */}
+            <Icon icon="logos:stripe" height={40} />
           </div>
         </div>
       </section>
@@ -567,36 +537,24 @@ export default function SalesFunnelSoulBound() {
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2.5">
             <img
-              src={XPOLL_LOGO}
+              src={ASSETS.images.logo}
               alt="XPOLL"
-              className="h-10 w-auto"
+              className="h-16 w-auto"
             />
-          </div>
-          <div className="text-xs text-white/30 flex gap-6 font-[Manrope]">
+          </div> 
+             
+              
+          <div className="flex flex-col md:flex-row items-center text-center gap-2 text-xs text-white/30 font-[Manrope]  uppercase tracking-[0.15em] font-[Manrope]">
             <a
-              href="#"
+              href="/privacy-policy"
+              target="_blank"
               id="legal-privacy"
-              className="hover:text-white/60 transition-colors"
+              className="text-white/50 hover:text-white/60 transition-colors"
             >
-              Privacy Protocol
+              Privacy Policy
             </a>
-            <a
-              href="#"
-              id="legal-terms"
-              className="hover:text-white/60 transition-colors"
-            >
-              Issuance Standards
-            </a>
-            <a
-              href="#"
-              id="legal-compliance"
-              className="hover:text-white/60 transition-colors"
-            >
-              Compliance
-            </a>
-          </div>
-          <div className="text-[10px] text-white/20 uppercase tracking-[0.15em] font-[Manrope]">
-            &copy; 2024 XPOLL Infrastructure Group
+ 
+            <p>&copy; 2026 XPOLL Infrastructure Group</p>
           </div>
         </div>
       </footer>

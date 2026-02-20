@@ -111,7 +111,7 @@ export const EconomicTrustSection = () => {
           </div>
         </div>
         {/* footer */}
-        <div className="flex flex-col items-center gap-5 text-center py-16 md:py-20 text-sm md:text-lg lg:text-lg w-full">
+        <div className="flex flex-col items-center gap-4 text-center py-16 md:py-20 text-sm md:text-lg lg:text-lg w-full">
           {/* <div className="hidden lg:flex lg:items-center lg:justify-center gap-x-5 lg:gap-x-10 gap-y-5 text-[#A5ABB6] w-full max-w-[60rem]">
             <div className="md:hover:text-white/80 md:transition md:duration-200 md:cursor-pointer">
               Product suite
@@ -135,11 +135,18 @@ export const EconomicTrustSection = () => {
           <a
             href="https://www.canvaslabs.world/"
             target="_blank"
-            className="text-[#676D79] tracking-wide"
+            className="text-white/50 hover:text-white/60 transition-colors"
           >
             A Canvas Labs Innovation
           </a>
-          <p className="text-[#676D79] tracking-wide">
+          <a
+              href="/privacy-policy"
+              target="_blank"
+              id="legal-privacy"
+              className="text-white/50 hover:text-white/60 transition-colors"
+          >Privacy Policy  
+          </a>
+          <p className="text-white/50 hover:text-white/60 transition-colors">
             © 2025 XPoll Inc. All rights reserved.
           </p>
         </div>
