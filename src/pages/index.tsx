@@ -7,6 +7,7 @@ import { FutureOfIntelligence } from "@/components/sections/future-of-intelligen
 import { InsightsSection } from "@/components/sections/insights";
 import Leaderboard from "@/components/sections/leaderboard";
 import { LLMQuerySection } from "@/components/sections/llm-query";
+import { MarketplaceSubscriptions } from "@/components/sections/marketplace-subscriptions";
 import { PhoneVidSection } from "@/components/sections/phone-vid-section";
 import { StructuredIntelligence } from "@/components/sections/structured-intelligence";
 import { VerificationSection } from "@/components/sections/verification";
@@ -17,6 +18,7 @@ const IndexPage = () => {
       <DecentralizeSection />
       <Leaderboard />
       <Blogs />
+      <MarketplaceSubscriptions />
       <FeaturesSection />
       <ContactUs />
       <FutureOfIntelligence />
