@@ -109,8 +109,8 @@ export function MarketplaceSubscriptions() {
   return (
     <section className="w-full bg-slate-100 px-4 py-10 sm:py-12">
       <div className="mx-auto max-w-5xl">
-        <h2 className="mb-7 text-center text-xl font-semibold text-slate-900 sm:mb-9 sm:text-2xl font-manrope">
-          Marketplace Subscriptions
+        <h2 className="mb-7 text-center text-2xl font-extrabold sm:mb-9 md:text-4xl font-manrope">
+          XPOLL Marketplace
         </h2>
 
         <div className="grid gap-6 sm:gap-7 md:grid-cols-3">
@@ -153,7 +153,7 @@ export function MarketplaceSubscriptions() {
                 href={MARKETPLACE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full rounded-full border border-xteal/70 bg-white px-4 py-2.5 text-center text-sm font-semibold text-xteal shadow-[0_1px_0_rgba(15,23,42,0.04)] transition-colors hover:bg-xteal hover:text-white focus:outline-none focus:ring-2 focus:ring-xteal/40 font-manrope"
+                className="mt-5 block w-full rounded-full border border-xteal/70 bg-white px-4 py-2.5 text-center text-sm font-semibold text-xteal shadow-[0_1px_0_rgba(15,23,42,0.04)] transition-colors hover:bg-xteal hover:text-white focus:outline-none focus:ring-2 focus:ring-xteal/40 font-manrope"
               >
                 {card.ctaText}
               </a>
