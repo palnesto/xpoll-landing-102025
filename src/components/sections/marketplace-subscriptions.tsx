@@ -2,6 +2,7 @@ import { Check } from "lucide-react";
 import soulBoundToken from "@/assets/soulBound.png";
 import { motion } from "framer-motion";
 const MARKETPLACE_URL = "https://app.xpoll.io/marketplace";
+const AI_TRAINING_CONTACT_URL = "https://t.me/cryptogeek_ivan";
 
 const TEAL = "#0F9BA3";
 
@@ -109,7 +110,7 @@ export function MarketplaceSubscriptions() {
   return (
     <section className="w-full bg-slate-100 px-4 py-10 sm:py-12">
       <div className="mx-auto max-w-5xl">
-        <h2 className="mb-7 text-center text-2xl font-extrabold sm:mb-9 md:text-4xl font-manrope">
+        <h2 className="pb-7 text-center text-2xl font-extrabold sm:mb-9 md:text-4xl font-manrope">
           XPOLL Marketplace
         </h2>
 
@@ -160,6 +161,17 @@ export function MarketplaceSubscriptions() {
             </motion.div>
           ))}
         </div>
+
+        <a
+          href={AI_TRAINING_CONTACT_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="pt-32 flex justify-center"
+        >
+          <span className="block w-full max-w-2xl rounded-full border border-xteal/70 bg-white px-4 py-2.5 text-center text-sm md:text-xl font-bold text-xteal shadow-[0_1px_0_rgba(15,23,42,0.04)] transition-colors hover:bg-xteal hover:text-white focus:outline-none focus:ring-2 focus:ring-xteal/40 font-manrope">
+            Please Contact Us for AI training data and RLHF data sales
+          </span>
+        </a>
       </div>
     </section>
   );
