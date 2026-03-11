@@ -23,9 +23,9 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="hidden lg:block fixed top-0 left-0 w-full z-50 bg-white/10 backdrop-blur-lg bg-blur-lg h-24">
+    <header className="fixed top-0 left-0 w-full z-[999] bg-white/10 backdrop-blur-lg bg-blur-lg h-20 md:h-24">
       <div className="relative h-24">
-        <figure className="flex justify-center items-center py-3 h-24">
+        <figure className="flex justify-center items-center py-3 h-20 md:h-24">
           <img
             src={ASSETS.images.xpollLogo}
             alt="Logo"
@@ -33,12 +33,12 @@ const Navbar = () => {
           />
         </figure>
 
-        <div className="absolute right-8 top-1/2 -translate-y-1/2">
+        <div className="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 -mt-2 lg:mt-0">
           <div className="relative">
             <button
               type="button"
               onClick={() => setOpen((prev) => !prev)}
-              className="inline-flex items-center gap-2 rounded-full bg-[#0264FF] px-7 py-4 text-sm font-medium text-white shadow-sm transition hover:bg-[#0264FF]/80"
+              className="inline-flex items-center gap-2 rounded-full bg-[#0264FF] px-2 py-2 md:px-7 md:py-4 text-xs md:text-sm font-medium text-white shadow-sm transition hover:bg-[#0264FF]/80"
             >
               Our Products
               <span className="text-xs">{open ? "▲" : "▼"}</span>
@@ -53,6 +53,14 @@ const Navbar = () => {
                   className="block px-4 py-2 hover:bg-slate-50"
                 >
                   MarTech
+                </a>
+                <a
+                  href="https://app.dredge.world/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block px-4 py-2 hover:bg-slate-50"
+                >
+                  AI-Powered Data Processing & Analytics Tool
                 </a>
                 <a
                   href="https://app.xpoll.io/marketplace"
@@ -89,7 +97,7 @@ const Navbar = () => {
     </header>
   );
 };
- 
+
 const DefaultLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <MaxWidthLayout>
@@ -140,8 +148,8 @@ export const StandardWidthLayout = ({
               ? noOnMobile
                 ? 0
                 : 0.1
-              : 1.5)
-        )
+              : 1.5),
+        ),
     );
 
   const [maxWidth, setMaxWidth] = useState(calculateWidth());
@@ -159,7 +167,7 @@ export const StandardWidthLayout = ({
     <div
       className={cn(
         "relative w-full flex flex-col items-center font-poppins",
-        className
+        className,
       )}
     >
       <div

@@ -35,10 +35,10 @@ export const DecentralizeSection = () => {
           className="h-full w-full object-contain"
         />
       </div> */}
-      <div className="flex flex-col w-full items-center gap-10 relative">
-        <div className="lg:hidden aspect-square h-16">
+      <div className="flex flex-col w-full items-center gap-10 relative pt-16 lg:pt-0">
+        {/* <div className="lg:hidden aspect-square h-16">
           <img className="h-full w-full" src={ASSETS.images.xpollLogo} alt="" />
-        </div>
+        </div> */}
 
         <div className="flex flex-col items-center text-center gap-3">
           <p className="text-black/50 font-normal text-lg sm:text-xl lg:text-2xl">
