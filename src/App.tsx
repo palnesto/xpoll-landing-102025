@@ -20,24 +20,76 @@ export function App() {
 }
 
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
+
   return (
     <header className="hidden lg:block fixed top-0 left-0 w-full z-50 bg-white/10 backdrop-blur-lg bg-blur-lg h-24">
-      <figure className="flex justify-center items-center py-3 h-24">
-        <img
-          src={ASSETS.images.xpollLogo}
-          alt="Logo"
-          className="h-full w-full"
-        />
-      </figure>
+      <div className="relative h-24">
+        <figure className="flex justify-center items-center py-3 h-24">
+          <img
+            src={ASSETS.images.xpollLogo}
+            alt="Logo"
+            className="h-full w-full"
+          />
+        </figure>
+
+        <div className="absolute right-8 top-1/2 -translate-y-1/2">
+          <div className="relative">
+            <button
+              type="button"
+              onClick={() => setOpen((prev) => !prev)}
+              className="inline-flex items-center gap-2 rounded-full bg-[#0264FF] px-7 py-4 text-sm font-medium text-white shadow-sm transition hover:bg-[#0264FF]/80"
+            >
+              Our Products
+              <span className="text-xs">{open ? "▲" : "▼"}</span>
+            </button>
+
+            {open && (
+              <div className="absolute right-0 mt-2 w-64 rounded-xl bg-white py-2 text-sm text-slate-800 shadow-xl ring-1 ring-black/5">
+                <a
+                  href="https://app.xpoll.io"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block px-4 py-2 hover:bg-slate-50"
+                >
+                  MarTech
+                </a>
+                <a
+                  href="https://app.xpoll.io/marketplace"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block px-4 py-2 hover:bg-slate-50"
+                >
+                  DeFi
+                </a>
+                <a
+                  href="https://grwb.io"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block px-4 py-2 hover:bg-slate-50"
+                >
+                  SocialFi
+                </a>
+                <div className="block px-4 py-2 text-slate-400 cursor-default">
+                  Web chat (coming soon)
+                </div>
+                <a
+                  href="https://canvaslabs.world"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block px-4 py-2 hover:bg-slate-50"
+                >
+                  End-to-End Consulting
+                </a>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
     </header>
   );
 };
-
-// const Navbar = () => {
-//   return (
-//     <header className="hidden lg:block lg:fixed bg-red-500 ">hello</header>
-//   );
-// };
+ 
 const DefaultLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <MaxWidthLayout>

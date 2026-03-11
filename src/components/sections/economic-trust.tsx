@@ -56,7 +56,7 @@ export const EconomicTrustSection = () => {
               Phone: <a href="tel:+1 860 655 0095">+1 860 655 0095</a>
             </p>
           </div>
-          <div className="flex flex-col gap-24 md:gap-32 items-center">
+          <div className="flex flex-col gap-24 md:gap- items-center">
             <>
               <GlowButton
                 color="custom"
@@ -79,6 +79,60 @@ export const EconomicTrustSection = () => {
                 Partner with us
               </GlowButton>
             </>
+
+            <div className="flex flex-col items-center gap-5 text-center">
+              <h3
+                className="inline-block text-3xl lg:text-5xl font-bold uppercase"
+                style={{
+                  backgroundImage:
+                    "radial-gradient(47.96% 47.96% at 50% 50%, #91B4FE 0%, #4E77FF 100%)",
+                  WebkitBackgroundClip: "text",
+                  backgroundClip: "text",
+                  color: "transparent",
+                  WebkitTextFillColor: "transparent",
+                }}
+              >
+                Our Products
+              </h3>
+              <div className="flex flex-wrap items-center justify-center gap-x-7 gap-y-2 lg:gap-10 text-base md:text-lg">
+                <a
+                  href="https://app.xpoll.io"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/80 hover:text-white transition-colors"
+                >
+                  MarTech
+                </a>
+                <a
+                  href="https://app.xpoll.io/marketplace"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/80 hover:text-white transition-colors"
+                >
+                  DeFi
+                </a>
+                <a
+                  href="https://grwb.io"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/80 hover:text-white transition-colors"
+                >
+                  SocialFi
+                </a>
+                <span className="text-white/50 italic">
+                  Web chat (coming soon)
+                </span>
+                <a
+                  href="https://canvaslabs.world"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/80 hover:text-white transition-colors"
+                >
+                  End-to-End Consulting
+                </a>
+              </div>
+            </div>
+
             <div className="flex items-center gap-12 md:gap-20">
               <GlowCircle
                 img={ASSETS.images.icons.x}
