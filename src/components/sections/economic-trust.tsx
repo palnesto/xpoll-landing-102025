@@ -119,6 +119,14 @@ export const EconomicTrustSection = () => {
                 >
                   SocialFi
                 </a>
+                <a
+                  href="https://app.dredge.world/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block hover:bg-slate-50"
+                >
+                  AI-Powered Data Processing & Analytics Tool
+                </a>
                 <span className="text-white/50 italic">
                   Web chat (coming soon)
                 </span>
@@ -149,7 +157,7 @@ export const EconomicTrustSection = () => {
                 onClick={() =>
                   window.open(
                     "https://www.instagram.com/xpollplatform/",
-                    "_blank"
+                    "_blank",
                   )
                 }
               />
@@ -194,11 +202,12 @@ export const EconomicTrustSection = () => {
             A Canvas Labs Innovation
           </a>
           <a
-              href="/privacy-policy"
-              target="_blank"
-              id="legal-privacy"
-              className="text-white/50 hover:text-white/60 transition-colors"
-          >Privacy Policy  
+            href="/privacy-policy"
+            target="_blank"
+            id="legal-privacy"
+            className="text-white/50 hover:text-white/60 transition-colors"
+          >
+            Privacy Policy
           </a>
           <p className="text-white/50 hover:text-white/60 transition-colors">
             © 2025 XPoll Inc. All rights reserved.
@@ -232,7 +241,7 @@ export const GlowCircle = ({
     <div
       className={cn(
         `glow-circle aspect-square ${sizeClasses} overflow-hidden cursor-pointer`,
-        className
+        className,
       )}
       onClick={onClick}
     >
