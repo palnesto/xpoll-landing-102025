@@ -9,6 +9,7 @@ import ibt from "@/assets/ibt.svg";
 import biz from "@/assets/biz.jpeg";
 import ceo from "@/assets/ceo.png";
 import voice from "@/assets/voice.jpeg";
+import yglf from "@/assets/yglf.avif"
 
 const Row = React.memo(function Row({ user, index }) {
   return (
@@ -170,7 +171,7 @@ export default function Leaderboard() {
       <section className="w-full flex flex-col items-center mt-10">
         <h2 className="text-3xl font-semibold text-blue-500">Featured in</h2>
 
-        <section className="mx-auto grid max-w-6xl grid-cols-1 place-items-center gap-7 px-4 md:grid-cols-2 md:gap-14 md:px-6 xl:grid-cols-5">
+        <section className="mx-auto grid max-w-7xl grid-cols-1 place-items-center gap-7 px-4 md:grid-cols-2 md:gap-14 md:px-6 xl:grid-cols-6">
           <a
             href="https://www.ibtimes.com/inside-stanton-terranovas-canvas-labs-innovative-space-ideas-that-dont-fit-mold-3791873"
             target="_blank"
@@ -211,7 +212,6 @@ export default function Leaderboard() {
             <img src={biz} alt="Bizpreneur" className="h-20 xl:h-32" />
           </a>
 
-          {/* ✅ Center the 5th item on md by spanning 2 columns */}
           <a
             href="https://ceoweekly.com/from-law-to-systems-innovation-how-stanton-terranova-built-a-life-and-business-around-earned-independence/"
             target="_blank"
@@ -219,6 +219,14 @@ export default function Leaderboard() {
             className="flex items-center justify-center md:col-span-2 xl:col-span-1"
           >
             <img src={ceo} alt="CEO Weekly" className="h-20 xl:h-32" />
+          </a>
+          <a
+            href="https://www.yglf.org/leadership-team"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center md:col-span-2 xl:col-span-1"
+          >
+            <img src={yglf} alt="CEO Weekly" className="h-20 xl:h-32" />
           </a>
         </section>
       </section>
